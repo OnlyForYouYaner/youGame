@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>releasePost</title>
+
+
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/releasePost.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="http://localhost:8081/js/wangEditor.js"></script>
+    <script src="http://localhost:8081/js/vue.js"></script>
+</head>
+<body>
+
+
+<%-include nav.html%>
+<div class="releasePost-box">
+    <div class="top-box">
+        <h3>标题</h3>
+        <input type="text" placeholder="文章标题" value="" maxlength="40" id="titletText" v-model="msg">
+        <p>您还可以输入{{40-msg.length}}个字</p>
+    </div>
+    <div id="editor">
+        <div id="div1" class="toolbar">
+        </div>
+        <div style="padding: 5px 0; background: #33394d"></div>
+        <div id="div2" class="text">
+        </div>
+    </div>
+    <div class="bottom-box">
+        <button class="left">保存</button>
+        <button class="right">发送</button>
+    </div>
+    <div class="prompt" id="local">保存成功</div>
+    <div class="prompt" id="send">发送成功</div>
+</div>
+
+<%-include bottom.html%>
+
+
+</body>
+<script type="text/javascript">
+    var uid=$('#top-nav-login-ing').attr('data-id');
+    if(uid==undefined){
+        uid=1;
+    }
+    function prompt() {
+        $('.prompt').css('display','none');
+    }
+    new Vue({
+        el:'.top-box',
+        data:{
+            msg:''
+        }
+    });
+
+    var E = window.wangEditor;
+    var editor = new E('#div1', '#div2');
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create();
+    function setCookie(name,value,iDay) {
+        if(iDay){
+            //有过期时间
+            var oDate=new Date();
+            oDate.setDate(oDate.getDate()+iDay);
+            document.cookie=name+'='+value+';expires='+oDate+';path=/';
+        }else{
+            //没有过期时间
+            document.cookie=name+'='+value+';path=/';
+        }
+    }
+    function getCookie(name) {
+        var str=document.cookie;
+        var arr=str.split('; ');
+        for(var i=0;i<arr.length;i++){
+            //arr[i]-->  bbb=222     aaa=111    ccc=333
+            var arr2=arr[i].split('=');
+            if(arr2[0]==name){
+                return arr2[1]
+            }
+        }
+        return ''
+    }
+    function Appendzero(obj) {
+        if(obj<10) {
+            return '0'+obj;
+        }
+        else{
+            return obj;
+        }
+    }
+    var str=window.location.search.substr(1).split('=');
+    $('.right').click(function () {
+        var titletText=$('#titletText').val();
+        var editor_value=$('#div2').text();
+        var oDate=new Date();
+        var y=oDate.getFullYear();
+        var mon=oDate.getMonth()+1;
+        var d=oDate.getDate();
+        var h=oDate.getHours();
+        var m=oDate.getMinutes();
+        var s=oDate.getSeconds();
+        var p_Date=y+'-'+Appendzero(mon)+'-'+Appendzero(d)+' '+Appendzero(h)+':'+Appendzero(m)+':'+Appendzero(s);
+        // console.log(p_Date);
+        $.ajax({
+        url:'/sendPost',
+        data:{
+            titletText:titletText,
+            editor_value:editor_value,
+            teamId:str[1],
+            userID:uid,
+            p_Date:p_Date
+        }
+    });
+        $('#titletText').val('');
+        $('#div2').text('');
+        $('#send').css( 'display','block');
+        $('#send').css( 'transform','translate(0px,-50px)');
+        setTimeout(prompt,1100);
+        setCookie('title','');
+        setCookie('content','');
+
+        setTimeout(function(){
+            window.open('officialDetails.html?id='+str[1]+'','_self')
+        },3000);
+
+    });
+    $('.left').click(function () {
+        var titletText=$('#titletText').val();
+        var editor_value=$('#div2').text();
+        setCookie('title',titletText,7);
+        setCookie('content',editor_value,7);
+        $('#local').css( 'display','block');
+        $('#local').css( 'transform','translate(0px,-50px)');
+        setTimeout(prompt,1100);
+        setTimeout(function(){
+            window.open('officialDetails.html?id='+str[1]+'','_self')
+        },3000);
+    });
+
+
+
+    var title=getCookie('title');
+    var content=getCookie('content');
+    console.log(title,content);
+
+    $('#titletText').val(title);
+
+</script>
+</html>

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ugame首页</title>
+    <style>
+           *{
+               padding: 0;
+               margin: 0;
+               list-style: none;
+           }
+    </style>
+
+</head>
+
+
+
+
+<script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+<script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+<link rel="stylesheet" href="http://localhost:8081/dist/swiper.css">
+<link rel="stylesheet" href="http://localhost:8081/css/index.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+<body style=" width: 100%;
+  height: 100%; background-color: #202539;
+ ">
+<%-include nav.html%>
+<div style="width: 100%;background-color: #202539;">
+    <div id="index-body">
+        <section id="index-sec1">
+            <div id="index-banner-car">
+                <div id="index-banner-gamemore">
+                    <a href="javascript:;" readonly="" id="index-banner-game1">热门推荐游戏</a>
+                    <a href="games.html" id="index-banner-game2">更多 +</a>
+                </div>
+                <div id="index-lunbo">
+                    <!--<img src="./../images/小黄鸭.png" alt="" style="width: 700px;height: 400px">-->
+                    <div class="swiper-container" id="index-lunbo-box">
+                        <div class="swiper-wrapper" id="box1">
+
+
+                            <% for(var i=0;i<5;i++){ %>
+                            <div class="swiper-slide">
+                                <img src="../../<%=data[i].p_Path4%>" title="<%=data[i].g_name%>" style="height: 400px;width: 700px" alt="" data-id="<%=data[i].g_id%>">
+                            </div>
+                            <% } %>
+
+
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white left"></div>
+                        <div class="swiper-button-next swiper-button-white right"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="index-com">
+                <div id="index-com-commore">
+                    <a href="javascript:;" id="index-com-com1">UGame社区</a>
+                    <a href="community.html" id="index-com-com2">更多 +</a>
+                </div>
+                <div id="index-com-hot">
+                    <h2>热门帖子</h2>
+                    <ul id="index-com-hot-cur">
+                        <% for(var i=0;i<4;i++){ %>
+                        <li data-id="<%=data2[i].p_id%>"><h3><%=data2[i].p_text%></h3><p><%=data2[i].p_message%></p></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="index-sec2">
+            <div id="index-holiday">
+                <div id="index-holiday-top">
+                    <p>节假日特惠</p>
+                </div>
+                <div id="index-holiday-sale">
+
+                    <% for(var i=0;i<4;i++){ %>
+                    <div class="holiday-sale" data-id="<%=data[i].g_id%>" id="<%=data[i].g_id%>">
+                        <div class="holiday-sale-pro">促销</div>
+                        <img src="./../<%=data[i].p_Path2%>" alt="">
+                        <h4><%=data[i].g_name%></h4>
+                        <p>50%</p><h5>$ <%=data[i].g_price%></h5>
+                    </div>
+                    <% } %>
+
+
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/yougame2.png" alt="">-->
+                    <!--<h4>炒鸡玛丽 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/yougame2.png" alt="">-->
+                    <!--<h4>炒鸡玛丽 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/yougame2.png" alt="">-->
+                    <!--<h4>炒鸡玛丽 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/yougame2.png" alt="">-->
+                    <!--<h4>炒鸡玛丽 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div id="index-per">
+                <div id="index-per-top">
+                    <p>周边特惠</p>
+                </div>
+                <div id="index-per-sale">
+                    <% for(var i=0;i<4;i++){ %>
+                    <div class="holiday-sale" data-id="<%=data1[i].m_id%>">
+                        <div class="holiday-sale-pro">促销</div>
+                        <img src="./<%=data1[i].m_show%>" alt="">
+                        <h4><%=data1[i].m_name%></h4>
+                        <p>50%</p><h5>$ <%=data1[i].m_cost%></h5>
+                    </div>
+                    <% } %>
+
+
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/小黄鸭.png" alt="">-->
+                    <!--<h4>小黄鸭 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/小黄鸭.png" alt="">-->
+                    <!--<h4>小黄鸭 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/小黄鸭.png" alt="">-->
+                    <!--<h4>小黄鸭 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                    <!--<div class="holiday-sale">-->
+                    <!--<div class="holiday-sale-pro">促销</div>-->
+                    <!--<img src="./../images/小黄鸭.png" alt="">-->
+                    <!--<h4>小黄鸭 特别版</h4>-->
+                    <!--<p>50%</p><h5>$ 50</h5>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </section>
+        <section id="index-sec4">
+            <div id="index-group-top">
+                <h4>精品小组</h4>
+            </div>
+            <div id="index-group-push"  >
+            <!--    <div class="index-group">
+                    <img src="./../images/小黄鸭.png" alt="">
+                    <div class="index-group-right">
+                        <h3>绝望的呐喊</h3>
+                        <h5>人数:7777</h5>
+                        <h6>帖子:8888</h6>
+                    </div>
+                </div>
+                <div class="index-group">
+                    <img src="./../images/小黄鸭.png" alt="">
+                    <div class="index-group-right">
+                        <h3>绝望的呐喊</h3>
+                        <h5>人数:7777</h5>
+                        <h6>帖子:8888</h6>
+                    </div>
+                </div>
+                <div class="index-group">
+                    <img src="./../images/小黄鸭.png" alt="">
+                    <div class="index-group-right">
+                        <h3>绝望的呐喊</h3>
+                        <h5>人数:7777</h5>
+                        <h6>帖子:8888</h6>
+                    </div>
+                </div>
+-->
+            </div>
+        </section>
+        <section id="index-sec3">
+            <div id="index-sale-left">
+                <div id="index-newgame">
+                    <div id="index-new-top">
+                        <a href="#" readonly="" id="index-new">最新游戏</a>
+                        <a href="games.html" id="index-new-newmore">更多 +</a>
+                    </div>
+                    <div id="index-new-sale">
+                        <!--<div class="index-new-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-new-game-text">-->
+                                <!--<h5>暗黑破坏神<span>new</span></h5>-->
+                                <!--<h4>发行于2018-1-1</h4>-->
+                                <!--<ul>-->
+                                    <!--<li>策略</li>-->
+                                    <!--<li>模拟</li>-->
+                                    <!--<li>经营</li>-->
+                                <!--</ul>-->
+                                <!--<p>$ 200</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div id="index-pro-game">
+                    <div id="index-pro-top">
+                        <a href="#" readonly="" id="index-pro">A + 大作</a>
+                        <a href="games.html" id="index-pro-promore">更多 +</a>
+                    </div>
+                    <div id="index-pro-sale">
+                        <!--<div class="index-pro-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-pro-game-text">-->
+                                <!--<h5>暗黑破坏神</h5>-->
+                                <!--<h4>发行于2018-1-1</h4>-->
+                                <!--<ul>-->
+                                    <!--<li>策略</li>-->
+                                    <!--<li>模拟</li>-->
+                                    <!--<li>经营</li>-->
+                                <!--</ul>-->
+                                <!--<p>$ 200</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-pro-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-pro-game-text">-->
+                                <!--<h5>暗黑破坏神<span>促销</span></h5>-->
+                                <!--<h4>发行于2018-1-1</h4>-->
+                                <!--<ul>-->
+                                    <!--<li>策略</li>-->
+                                    <!--<li>模拟</li>-->
+                                    <!--<li>经营</li>-->
+                                <!--</ul>-->
+                                <!--<p>$ 200</p>-->
+                                <!--<h6>-50%</h6>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-pro-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-pro-game-text">-->
+                                <!--<h5>暗黑破坏神<span>促销</span></h5>-->
+                                <!--<h4>发行于2018-1-1</h4>-->
+                                <!--<ul>-->
+                                    <!--<li>策略</li>-->
+                                    <!--<li>模拟</li>-->
+                                    <!--<li>经营</li>-->
+                                <!--</ul>-->
+                                <!--<p>$ 200</p>-->
+                                <!--<h6>-50%</h6>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-pro-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-pro-game-text">-->
+                                <!--<h5>暗黑破坏神<span>促销</span></h5>-->
+                                <!--<h4>发行于2018-1-1</h4>-->
+                                <!--<ul>-->
+                                    <!--<li>策略</li>-->
+                                    <!--<li>模拟</li>-->
+                                    <!--<li>经营</li>-->
+                                <!--</ul>-->
+                                <!--<p>$ 200</p>-->
+                                <!--<h6>-50%</h6>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="index-sale-right">
+                <div id="index-rank">
+                    <div id="index-rank-top">
+                        <a href="#" id="index-rank-topgame">总排行</a>
+                    </div>
+                    <div id="index-rank-game">
+                       <!-- <div class="index-rank-game">
+                            <img src="./../images/yougame2.png" alt="">
+                            <div class="index-rank-gamefloat">
+                                <h4>奥德赛</h4>
+                                <h6>发行于:2018-1-1</h6>
+                                <p>1</p>
+                            </div>
+                        </div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="index-rank-game">-->
+                            <!--<img src="./../images/yougame2.png" alt="">-->
+                            <!--<div class="index-rank-gamefloat">-->
+                                <!--<h4>奥德赛</h4>-->
+                                <!--<h6>发行于:2018-1-1</h6>-->
+                                <!--<p>1</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<%-include bottom.html%>
+</body>
+<script src="../dist/swiper.js"></script>
+<script>
+    $('#index-holiday-sale div').on('click',function () {
+        var OID=$(this).attr('data-id');
+        window.open('products.html?g_id='+OID+'')
+    });
+    $('#box1 div img').on('click',function () {
+        var OID=$(this).attr('data-id');
+        window.open('products.html?g_id='+OID+'')
+    });
+    $('#index-per-sale div').on('click',function () {
+        var OID=$(this).attr('data-id');
+        window.open('shop.html?g_id='+OID+'')
+    });
+    $('#index-com-hot-cur li').on('click',function () {
+        var OID=$(this).attr('data-id');
+        window.open('Utie.html?p_id='+OID+'')
+    });
+
+    function newgame() {
+        $.ajax({
+            url: '/newgame',
+            success:function (res) {
+                if (!res.error){
+                    $('#index-new-sale').html('');
+                    $(res.data).each(function () {
+                        $('#index-new-sale').append(`<div class="index-new-game" data-id="${this.g_id}" id="${this.g_id}">
+                                                        <img src="${this.p_Path2}" alt="">
+                                                        <div class="index-new-game-text">
+                                                            <h5>${this.g_name}<span>new</span></h5>
+                                                            <h4>发行于${this.g_time.split('T')[0]}</h4>
+                                                            <ul>
+
+                                                           </ul>
+                                                            <p>$ ${this.g_price}</p>
+                                                        </div>
+                                                    </div>`);
+                        var a=this.g_id;
+                        $('#index-new-sale').on('click',"#"+a,function () {
+                            var OID=$(this).attr('data-id');
+                            window.open('products.html?g_id='+OID+'')
+                        });
+                        $.ajax({
+                            url:'/newgameTime',
+                            data: {
+                                Id:this.g_id
+                            },
+                            success:function (res) {
+                                $(res.data).each(function () {
+                                    $("#"+a+" div ul").append(`<li data-id="${this.g_id}">${this.t_type}</li>`);
+                                })
+                            }
+                        })
+                    })
+                }
+            }
+        })
+    }
+    function agame() {
+        $.ajax({
+            url: '/pricegame',
+            success:function (res) {
+                if (!res.error){
+                    $('#index-pro-sale').html('');
+                    $(res.data).each(function () {
+                        $('#index-pro-sale').append(`<div class="index-pro-game" data-id="${this.g_id}" id="${this.g_id}bb">
+                                                        <img src="${this.p_Path2}" alt="">
+                                                        <div class="index-pro-game-text">
+                                                            <h5>${this.g_name}</h5>
+                                                            <h4>发行于${this.g_time.split('T')[0]}</h4>
+                                                            <ul>
+
+                                                           </ul>
+                                                            <p>$ ${this.g_price}</p>
+                                                        </div>
+                                                    </div>`);
+                        var a=this.g_id+'bb';
+                        $('#index-pro-sale').on('click',"#"+a,function () {
+                            var OID=$(this).attr('data-id');
+                            window.open('products.html?g_id='+OID+'')
+                        });
+                        $.ajax({
+                            url:'/newgameTime',
+                            data: {
+                                Id:this.g_id
+                            },
+                            success:function (res) {
+                                $(res.data).each(function () {
+                                    $("#"+a+" div ul").append(`<li data-id="${this.g_id}">${this.t_type}</li>`);
+                                })
+                            }
+                        })
+                    })
+                }
+            }
+        })
+    }
+    function allgame() {
+        $.ajax({
+            url: '/allgametop',
+            success:function (res) {
+                if (!res.error){
+                   $('#index-rank-game').html('');
+                   var a=1;
+                    $(res.data).each(function () {
+
+                        $('#index-rank-game').append(`
+                         <div class="index-rank-game" data-id="${this.g_id}">
+                            <img src="${this.p_Path2}" alt="">
+                            <div class="index-rank-gamefloat">
+                                <h4>${this.g_name}</h4>
+                                <h6>发行于:${this.g_time.split('T')[0]}</h6>
+                                <p>${a}</p>
+                            </div>
+                        </div>
+                        `);
+                        a+=1;
+                    });
+                    $('#index-rank-game .index-rank-game').on('click',function () {
+                        var OID=$(this).attr('data-id');
+                        window.open('products.html?g_id='+OID+'')
+                    });
+                    $('#index-rank-game .index-rank-game div p').eq(0).css('background-color','rgba(253,160,1,0.77)');
+                    $('#index-rank-game .index-rank-game div p').eq(0).css('color','white');
+                    $('#index-rank-game .index-rank-game div p').eq(1).css('background-color','rgba(102,181,69,0.9)');
+                    $('#index-rank-game .index-rank-game div p').eq(1).css('color','white');
+                    $('#index-rank-game .index-rank-game div p').eq(2).css('background-color','rgba(78,153,181,0.9)');
+                    $('#index-rank-game .index-rank-game div p').eq(2).css('color','white');
+                }
+            }
+        })
+    }
+    function allteam(){
+        $.ajax({
+            url: '/demoallteam',
+            success: function (res) {
+
+                $(res.data).each(function () {
+
+                    $('#index-group-push').append(`
+                           <div class="index-group" data-id="${this.a_id}">
+                    <img src="${this.a_image}" alt="">
+                    <div class="index-group-right">
+                        <h3>${this.a_name}</h3>
+                        <h5 class="${this.a_id}qqq"></h5>
+                        <h6 class="${this.a_id}ddd"></h6>
+                    </div>
+                </div>
+                   `);
+                    var a=this.a_id+'qqq';
+                    var b=this.a_id+'ddd';
+                    $.ajax({
+                        url:'/searchAllteamPeo',
+                        data: {
+                            Id:this.a_id
+                        },
+                        success:function (res) {
+                            $("#index-group-push div ."+a+"").html('人数: '+res.data[0].peo)
+                        }
+                    });
+                    $.ajax({
+                        url:'/searchAllteamutie',
+                        data: {
+                            Id:this.a_id
+                        },
+                        success:function (res) {
+
+                            $("#index-group-push div ."+b+"").html('帖子数: '+res.data[0].peo)
+
+                        }
+                    });
+                });
+                $('#index-group-push .index-group').on('click',function () {
+
+                    var OID=$(this).attr('data-id');
+                    console.log(OID);
+                    window.open('officialDetails.html?a_id='+OID+'')
+                });
+            }
+        })
+    }
+    newgame();
+    agame();
+    allgame();
+    allteam();
+
+    var oLeft=document.querySelector('.left');
+    var oRight=document.querySelector('.right');
+    var oDiv=document.querySelector('#index-lunbo-box');
+
+    oDiv.onmouseenter=function () {
+        oLeft.style.display='block';
+        oRight.style.display='block';
+    };
+    oDiv.onmouseleave=function () {
+        oLeft.style.display='none';
+        oRight.style.display='none'
+    };
+
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000,//可选选项，自动滑动
+        autoplayDisableOnInteraction : false,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop:true
+    });
+</script>
+</html>

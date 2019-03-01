@@ -1,0 +1,241 @@
+body {
+  background-color: #1F2639;
+}
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.s_box {
+  width: 1340px;
+  background: #1F2639;
+  margin: 200px auto 100px auto;
+}
+.s_box1 {
+  width: 1200px;
+  height: 460px;
+  margin: 50px auto;
+}
+.left {
+  width: 460px;
+  height: 460px;
+  float: left;
+  border: 1px solid rgba(125, 125, 125, 0.54);
+  background: #1A1D2E;
+}
+.left img {
+  width: 320px;
+  height: 269px;
+  margin-left: 70px;
+  margin-top: 95.5px;
+  vertical-align: middle;
+}
+.right {
+  width: 710px;
+  height: 460px;
+  float: left;
+  margin-left: 20px;
+}
+.right_tilte {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #B9C0EF;
+}
+.right_price {
+  color: #ff6900;
+  font-size: 30px;
+  font-weight: bold;
+}
+.right_type {
+  font-size: 14px;
+  margin: 50px 0 20px 0;
+  color: #7A80A2;
+}
+.right-type_one {
+  padding: 5px 0 30px 0;
+  background: #1F2639;
+  border-top: 1px solid #7A80A2;
+  border-bottom: 1px solid #7A80A2;
+}
+.right-type_one h2 {
+  font-weight: normal;
+  margin-bottom: 8px;
+  color: #B9C0EF;
+  font-size: 14px;
+}
+.right-type_one .content {
+  padding: 4px 19px;
+  margin-right: 10px;
+  border: 1px solid #4C516A;
+  font-size: 14px;
+  color: #B9C0EF;
+  cursor: pointer;
+}
+.right-type_one .active {
+  color: #ff6900;
+  border-color: #ff6900;
+}
+.right-type_one .dis {
+  display: none;
+}
+.right_input {
+  float: left;
+  line-height: 24px;
+  height: 20px;
+  width: 35px;
+  background: #FFFFFF;
+  color: #33394D;
+  text-align: center;
+  border: none;
+  margin: 3px 8px 0 8px;
+  border-radius: 2px 2px 2px 2px;
+}
+.SK-product-count {
+  line-height: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  width: 125px;
+  position: relative;
+  text-align: center;
+  border: 1px solid #4C516A;
+  background: #2E344A;
+  padding: 0 10px;
+}
+.SK-product-count span {
+  float: left;
+  color: #B9C0EF;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.btnn {
+  margin-top: 30px;
+  width: 100%;
+}
+.btn_shop {
+  background: #ff6900;
+  margin-right: 15px;
+  float: left;
+  cursor: pointer;
+  outline: none;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 25px;
+  border-radius: 2px 2px 2px 2px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+}
+a {
+  float: left;
+}
+.btn_wish {
+  float: right;
+  border: 1px solid #4C516A;
+  background: #2E344A;
+  color: #B9C0EF;
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
+  outline: none;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 25px;
+  border-radius: 2px 2px 2px 2px;
+}
+.btn_buy {
+  background: #508BF3;
+}
+.s_box2 {
+  width: 1200px;
+  margin: 70px auto;
+}
+.s_box2 ul {
+  margin-bottom: 40px;
+}
+.s_box2 li {
+  float: left;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  color: #B9C0EF;
+  padding-bottom: 2px;
+  margin-right: 40px;
+}
+.s_box2 .activ {
+  color: #ff6900;
+  border-bottom: 2px solid #ff6900;
+}
+.service {
+  background: #33394D;
+  color: #B9C0EF;
+  font-size: 14px;
+  padding: 30px;
+  display: none;
+}
+#shop {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.s_carbox {
+  width: 400px;
+  height: 248px;
+  background: white;
+  margin-left: 700px;
+  margin-top: 300px;
+}
+.s-tips {
+  height: 40px;
+  background: #33394d;
+  line-height: 40px;
+  color: white;
+}
+.s-tips span {
+  float: left;
+  font-size: 16px;
+  margin-left: 20px;
+}
+.s-tips .s-close {
+  color: white;
+  text-decoration: none;
+}
+.s-tips .s-close i {
+  font-size: 16px;
+  margin-left: 310px;
+}
+.s-success {
+  margin: 0 auto;
+  padding: 60px;
+  font-size: 14px;
+  text-align: center;
+  color: #2b2b2b;
+}
+.tipsthbody a {
+  text-decoration: none;
+}
+.s-car {
+  border: 1px solid #ff6900;
+  color: #ff6900;
+  background: white;
+  width: 90px;
+  height: 30px;
+  margin-left: 90px;
+  outline: none;
+}
+.countine {
+  border: 1px solid #ff6900;
+  color: #fff;
+  background: #ff6900;
+  width: 90px;
+  height: 30px;
+  margin-left: 40px;
+  outline: none;
+}
+/*# sourceMappingURL=shop.css.map */

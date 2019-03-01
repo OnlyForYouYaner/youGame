@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--<script src="../../bootstrap.js"></script>-->
+
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/Signin.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="http://localhost:8081/js/demo.js"></script>
+</head>
+<body>
+<%-include nav.html%>
+<div id="loginDiv">
+    <img src="http://localhost:8081/images/8~RDTF3Y$WG1J4T`}(I`WM3.jpg" height="750px" width="100%">
+
+    <div class="loginSmallDiv">
+        <div class="login_acount_text">
+            <ul class="nav" id="nav">
+                <li class="cur">账号登录</li>
+                <li>手机登录</li>
+            </ul>
+        </div>
+        <br>
+        <div class="item-box active">
+            <div class="loginInput">
+                <div class="form-input">
+                    <div>
+                        <input type="text" class="input-text " name="login_name" id="login_name" placeholder="用户名" value="">
+                    </div>
+                </div>
+
+                <!--<div>-->
+                <!--<input type="text" placeholder="用户名" name="name" id="name">-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+
+            <div class="form-input">
+                <div>
+                    <input type="password" class="input-text " name="password" id="password" placeholder="密码" value="">
+                </div>
+            </div>
+            <br>
+
+            <div class="input-box" >
+
+                <br>
+
+                <a class="pull-right" href="register.html">注册</a>
+            </div>
+            <div style="margin-top:20px">
+                <button type="button" class="btn btn-block redButton" id="loginling">登录</button>
+            </div>
+        </div>
+        <br>
+
+        <div class="item-box SK-form-body-wrapper">
+            <div class="SK-form-body">
+                <div class="form-input">
+                    <input type="text" class="input-text "
+                           name="" id="phone_number" placeholder="手机号码" value="">
+                </div>
+                <div class="form-input">
+                    <div>
+                        <input type="password" class="input-code  SK-form-control-signin"
+                               name="" id="pending_phone_number_token"
+                               placeholder="密码" value="">
+
+
+                    </div>
+                </div>b
+                <br>
+                <div class="SK-form-block other-info">
+                    <a class="sign_up_btn right" href="register.html">注册</a>
+
+                </div>
+                <br>
+                <div class="SK-button-com submit-btn">
+                    <button class="redButton" id="phonelogin">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include bottom.html%>
+
+
+</body>
+<script>
+
+    var oBtn1=document.querySelector('#loginling');
+    var oUser1=document.querySelector('#login_name');
+    var oPass1=document.querySelector('#password');
+
+    oBtn1.onclick=function () {
+        var ouser=oUser1.value;
+        var opass=oPass1.value;
+        $.ajax({
+            url:'/login',
+            data:{
+                luser:ouser,
+                lpass:opass
+            },
+            success:function (res) {
+                if(res.state==0){
+                    window.location.href='http://localhost:8081/demo.html';
+
+                }else{
+                    alert('账号或密码错误')
+                }
+            }
+        })
+    };
+    $('#phonelogin').on('click',function () {
+        var ouser=$('#phone_number').val();
+        var opass=$('#pending_phone_number_token').val();
+        $.ajax({
+            url:'/phlogin',
+            data:{
+                luser:ouser,
+                lpass:opass
+            },
+            success:function (res) {
+                if(res.state==0){
+                    alert('登录成功');
+                    console.log(res);
+                    window.location.href='http://localhost:8081/demo.html';
+
+                }else{
+                    alert('账号或密码错误')
+                }
+            }
+        })
+    })
+</script>
+</html>
+
+
+url:'/Signin',
+data:{
+luser:ouser,
+lpass:opass
+},
+success:function (res) {
+
+console.log(res.length)
+}

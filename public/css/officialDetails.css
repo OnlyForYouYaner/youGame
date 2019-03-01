@@ -1,0 +1,434 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#body {
+  background: #202539;
+}
+.big-box {
+  padding: 150px 0 40px;
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.left-top {
+  width: 790px;
+  padding: 0 20px;
+  margin: 0;
+  background: #33394d;
+}
+.left-top .left-top-title {
+  padding: 20px 0;
+  height: 170px;
+  border-bottom: 1px solid #7A80A2;
+}
+.left-top .left-top-title img {
+  float: left;
+  width: 220px;
+  height: 130px;
+  margin-right: 20px;
+}
+.left-top .left-top-title .description {
+  float: left;
+}
+.left-top .left-top-title .description h1 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #b9c0ef;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+.left-top .left-top-title .description p {
+  color: #b9c0ef;
+}
+.left-top .left-top-title .description p .none {
+  padding-left: 15px;
+}
+.left-top .left-top-title .btn {
+  float: right;
+}
+.left-top .left-top-title .btn-team {
+  color: #ffffff;
+  background: #ff6900;
+  border: 1px solid #ff6900;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  width: 100px;
+  padding: 5px 0;
+  font-size: 12px;
+}
+.left-top .left-top-title .btn-team1 {
+  background: transparent;
+  color: #7A80A2;
+  border: 1px solid #4C516A;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  width: 100px;
+  padding: 5px 0;
+  font-size: 12px;
+}
+.left-top-bottom {
+  width: 790px;
+  height: 20px;
+  margin: 0;
+  background: #33394d;
+  margin-bottom: 20px;
+}
+.left-bottom {
+  margin-top: 0;
+  background: #33394d;
+  padding: 20px 20px;
+  width: 790px;
+  font-size: 12px;
+}
+.left-bottom-top {
+  color: #b9c0ef;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  height: 40px;
+  border-bottom: 1px solid #7A80A2;
+}
+.left-bottom-top .rank {
+  font-size: 14px;
+  float: left;
+  margin: 3px 5px 0 0;
+}
+.left-bottom-top .relect-wrapper {
+  float: left;
+  height: 26px;
+  margin-right: 10px;
+  outline: none;
+}
+.left-bottom-top .relect {
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+}
+.left-bottom-top .relect-box {
+  height: 26px;
+  width: 200px;
+  line-height: 26px;
+  background: #3f4760;
+  outline: none;
+  padding: 0 10px;
+  display: inline-block;
+}
+.left-bottom-top .relect-selected {
+  height: 26px;
+  width: 120px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #7A80A2;
+  cursor: pointer;
+  text-align: left;
+}
+.left-bottom-top .relect-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin-top: -3px;
+  border: solid 4px;
+  border-color: #7a80a2 transparent transparent;
+}
+.left-bottom-top .relect-option {
+  width: 200px;
+  top: 25px;
+  display: none;
+  outline: none;
+  line-height: 26px;
+  position: absolute;
+  left: 0;
+  border: 1px solid #7a80a2;
+  background: #363d4f;
+  cursor: pointer;
+  text-align: left;
+  clear: both;
+}
+.left-bottom-top .left-bottom-top {
+  border: none;
+  text-align: center;
+  background: #508bf3;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px 2px 2px 2px;
+  float: right;
+  font-size: 14px;
+  height: 26px;
+  line-height: 15px;
+  padding: 5px 20px;
+}
+.left-bottom-top .left-bottom-top a {
+  text-decoration: none;
+  color: white ;
+}
+.left-bottom-bottom .item-wrap {
+  color: #7A80A2;
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #3f4760;
+}
+.left-bottom-bottom .item-wrap .header {
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+.left-bottom-bottom .item-wrap .header .btn {
+  float: left;
+  margin-top: 2px;
+  color: #7A80A2;
+  padding-left: 0;
+  padding-right: 0;
+}
+.left-bottom-bottom .item-wrap .header .btn .is-top {
+  background: #4ea0fd;
+  border: none;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px 2px 2px 2px;
+  padding: 0 3px;
+  margin: 3px 10px 0 0;
+}
+.left-bottom-bottom .item-wrap .header .btn .recommend {
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 12px;
+  background: #ff6900;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px 2px 2px 2px;
+  padding: 0 3px;
+  margin: 3px 10px 0 0;
+}
+.left-bottom-bottom .item-wrap .header .btn .essence {
+  background: #ff4c4c;
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px 2px 2px 2px;
+  padding: 0 3px;
+  margin: 3px 10px 0 0;
+}
+.left-bottom-bottom .item-wrap .header h1 {
+  float: left;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #b9c0ef;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+}
+.left-bottom-bottom .item-wrap .content {
+  font-size: 14px;
+  width: 740px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  cursor: pointer;
+  padding: 0;
+}
+.left-bottom-bottom .item-wrap .bottom {
+  margin: 0;
+  padding: 0;
+  color: #7A80A2;
+  font-size: 12px;
+}
+.left-bottom-bottom .item-wrap .bottom .left {
+  float: left;
+}
+.left-bottom-bottom .item-wrap .bottom .left img {
+  float: left;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+.left-bottom-bottom .item-wrap .bottom .left .nick_name {
+  color: #7A80A2;
+  float: left;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.left-bottom-bottom .item-wrap .bottom .left .time {
+  float: left;
+}
+.left-bottom-bottom .item-wrap .bottom .btn-wrapper {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+.left-bottom-bottom .item-wrap .bottom .btn-wrapper button {
+  border: none;
+  background: none;
+  color: #7A80A2;
+  outline: none;
+  padding: 1px 6px;
+  cursor: pointer;
+}
+.left-bottom-bottom .item-wrap .bottom .btn-wrapper button .fa-thumbs-up {
+  font-style: normal;
+  margin-right: 5px;
+  font-size: 12px;
+  text-rendering: auto;
+}
+.left-bottom-bottom .item-wrap .bottom .btn-wrapper button .reply {
+  font-style: normal;
+  margin-right: 5px;
+  font-size: 12px;
+}
+.page {
+  text-align: center;
+  padding: 50px 0;
+}
+.page li {
+  color: #7A80A2;
+}
+.page .pagination > li > a {
+  background-color: transparent;
+  border: 1px solid #7a80a2;
+}
+.left-box {
+  margin: 0;
+  float: left;
+  padding: 0 20px;
+}
+.right-box {
+  margin-left: 820px;
+  width: 350px;
+  padding: 0 10px;
+}
+.right-top {
+  background: #32384c;
+  height: 150px;
+  color: #A8BAEC;
+  font-size: 16px;
+  padding: 25px 20px;
+}
+.right-top img {
+  border-radius: 80px;
+  float: left;
+  padding: 10px;
+}
+.right-top .right-top2 {
+  padding-top: 6px ;
+  padding-left: 110px;
+}
+.right-top .right-top2 .name1 {
+  color: #ff6900;
+  cursor: pointer;
+}
+.right-top .right-top2 .name2 {
+  font-size: 14px;
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.right-bottom {
+  margin-top: 20px;
+  background: #33394d;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.title2 {
+  width: 290px;
+  height: 60px;
+  font-size: 18px;
+  color: #b9c0ef;
+  line-height: 60px;
+  border-bottom: 1px solid #b9c0ef;
+}
+.title2 p {
+  float: left;
+}
+.title2 a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  float: right;
+  color: #ff6900;
+  line-height: 60px;
+}
+.contentTeam a {
+  display: inline-block;
+  height: 97px;
+}
+.contentTeam .team1 {
+  padding: 20px 0;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align: center;
+}
+.contentTeam .team1 img {
+  float: left;
+  width: 100px;
+  height: 60px;
+  margin-right: 10px;
+  vertical-align: center;
+}
+.contentTeam .team1 div {
+  float: left;
+  height: 102px;
+  vertical-align: center;
+}
+.contentTeam .team1 h1 {
+  font-size: 14px;
+  color: #b9c0ef;
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  margin-top: 0;
+}
+.contentTeam .team1 h2 {
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 0;
+  font-size: 100%;
+  color: #7A80A2;
+  font-weight: normal;
+}
+.contentTeam .team1 p {
+  width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+  color: #7A80A2;
+}
+.contentTeam .team1 .contentteamone {
+  margin-left: 15px;
+}
+.nullPost {
+  text-align: center;
+  color: #b9c0ef;
+  margin-top: 200px;
+  height: 300px;
+}
+/*# sourceMappingURL=officialDetails.css.map */

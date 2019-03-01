@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+
+
+
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/shoppingCart.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+<%-include nav.html%>
+<div id="shopBox">
+    <!---购物车标题---->
+    <div class="s_shop"><span>购物车</span></div>
+    <div class="s_navigation">
+        <button class="active shopcartgames">游戏</button>
+        <button class="shopcartround">周边</button>
+    </div>
+    <!---购物车游戏内容---->
+    <section class="activ">
+        <div class="s-operation">
+            <input type="checkbox" id="s-checkbox">
+            <span class="s_future">全选</span>
+            <span class="s_game">游戏</span>
+            <span class="s_type"></span>
+            <span class="s_price">商品价格</span>
+            <span class="s_oper cao">操作</span>
+        </div>
+        <div class="goods round_games">
+
+
+        </div>
+        <div class="total">
+            <div class="all">
+                <span class="s-gamesm"></span>
+                <span class="pir gameprice">总价<i>￥<span>0</span>.00</i></span>
+                <button class="submit">提交</button>
+            </div>
+        </div>
+    </section>
+
+    <!---购物车周边内容---->
+    <section>
+        <div class="s-operation">
+            <input type="checkbox" id="check">
+            <span class="s_future">全选</span>
+            <span class="s_game">周边</span>
+            <span class="s_number"></span>
+            <span class="s_oper">价格</span>
+            <span class="s_oper cao">操作</span>
+        </div>
+
+        <div class="goods round_goods">
+
+
+
+            </div>
+
+
+        <div class="total">
+            <div class="all">
+                <span class="s-gamesm"></span>
+                <span class="pir">总价<i>￥<span>0</span>.00</i></span>
+                <button class="submit">提交</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<%-include bottom.html%>
+
+</body>
+<script src="http://localhost:8081/js/roundJS/shopingcart.js"></script>
+
+</html>

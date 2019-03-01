@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+           *{
+               padding: 0;
+               margin: 0;
+               list-style: none;
+           }
+
+    </style>
+
+   <!-- <link rel="stylesheet" href="./../public/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./../public/css/indextop.css">
+    <script src="./../public/dist/jquery-3.3.1.js"></script>
+    <script src="./../public/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+-->
+</head>
+<body>
+<div id="top">
+    <div id="top-nav">
+        <img src="./../images/yougame2.png" alt="" id="logo">
+        <div id="top-nav-list">
+            <ul id="top-nav-list-ul">
+                <li class="top-nav-list-li"><a href="demo.html" >首页</a></li>
+                <li class="top-nav-list-li" id="ugamemore"><a href="games.html">游戏</a>
+                   <!--<ul id="top-nav-game-ul">-->
+                       <!--<li class="top-nav-game-list">体育</li>-->
+                       <!--<li class="top-nav-game-list">策略</li>-->
+                       <!--<li class="top-nav-game-list">动作</li>-->
+                       <!--<li class="top-nav-game-list">角色扮演</li>-->
+                       <!--<li class="top-nav-game-list">竞速</li>-->
+                       <!--<li class="top-nav-game-list">射击</li>-->
+                       <!--<li class="top-nav-game-list">休闲</li>-->
+                       <!--<li class="top-nav-game-list">模拟</li>-->
+                   <!--</ul>-->
+                </li>
+                <li class="top-nav-list-li"><a href="community.html">社区</a></li>
+                <li class="top-nav-list-li" id="ugameround"><a href="round.html">周边</a>
+                    <!--<ul id="top-nav-per-ul">-->
+                        <!--<li class="top-nav-per-list">服饰</li>-->
+                        <!--<li class="top-nav-per-list">模型</li>-->
+                        <!--<li class="top-nav-per-list">盒装游戏</li>-->
+                        <!--<li class="top-nav-per-list">居家办公</li>-->
+                        <!--<li class="top-nav-per-list">其他</li>-->
+                    <!--</ul></li>-->
+            </ul>
+        </div>
+        <div style="float: right;position: relative;margin-right: 20px">
+
+                 <%if(user.u_nickName){%>
+            <div id="top-nav-login-ing" data-id="<%=user.u_id%>">
+                <span  title="">
+                    <img src="<%=user.u_photo%>" alt="" title="点金进入个人主页" id="headx">
+                    <a href="" title="点击进入个人中心" data-id="<%=user.u_id%>" class="nav-one" id="S-name"><%=user.u_nickName%></a>
+                    <a href="" id="out-login">[退出]</a>
+                </span>
+            </div>
+                <%}else{%>
+                <div id="top-nav-login-in">
+                <span ><a href="Signin.html">登录</a> | <a href="register.html">注册</a></span>
+                </div>
+                <%}%>
+
+            <div class="btn-group" id="top-nav-search-change">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="1">
+                    游戏
+                </button>
+                <ul class="dropdown-menu" id="#top-nav-search-change-down">
+                    <li value="1"><a href="javascript:;">游戏</a></li>
+                    <li value="2"><a href="javascript:;">周边</a></li>
+                    <li value="3"><a href="javascript:;">社区</a></li>
+                </ul>
+                <input type="text" placeholder="请输入搜索内容" id="search-text">
+                <span class="glyphicon glyphicon-search" id="search-text-btn"></span>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="nowpage">
+        <ul class="breadcrumb" id="nowpage-co">
+            <li>您的位置 : <a href="#">首页</a></li>
+
+            <!--<li class="active">Data</li>-->
+        </ul>
+    </div>
+</div>
+
+<div id="right">
+     <div id="right-box1">
+         <a> <span class="glyphicon glyphicon-shopping-cart" id="for-shop">  </span></a>
+
+         <a><span class="glyphicon glyphicon-heart" id="for-heart"></span></a>
+         <button style="background: rgba(0,0,0,0);border: none"><a><span class="glyphicon glyphicon-user" id="for-message" ></span></a></button>
+     </div>
+     <div id="right-backtop" class="back-top">
+         <ul>
+             <span class="back-top glyphicon glyphicon-plane" id="back-top"></span>
+           <li class="back-top" >返回顶部</li>
+         </ul>
+     </div>
+</div>
+
+
+<!--客服-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="z-index:999999" >
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">客服</h3>
+            </div>
+            <div class="modal-body">
+                <div id="all">
+                    <div id="Sealed-top">
+                        <!--&lt;!&ndash; Left &ndash;&gt;-->
+                        <!--<div class="Sealed-all">-->
+                        <!--<div class="Sealed">-->
+                        <!--<div><img src="http://localhost:8081/images/2.jpg"/></div>-->
+                        <!--<div>-->
+                        <!--<div class="left_triangle"></div>-->
+                        <!--<span>asdasdasd</span>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="Sealed-date">120465</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; Right &ndash;&gt;-->
+                        <!--<div class="receiver-all" >-->
+                        <!--<div class="receiver"><div>-->
+                        <!--<img src="http://localhost:8081/images/3.jpg"/>-->
+                        <!--</div>-->
+                        <!--<div class="div1"><div class="right_triangle"></div>-->
+                        <!--<span>asdasdasd</span></div>-->
+                        <!--</div>-->
+                        <!--<div class="receiver-date">sadasdasdasd</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="Sealed-bottom">
+                    <textarea class="form-control" rows="5" id="msg" placeholder="请输入内容";></textarea>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="user-btn">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    $('#right-backtop ul').on('mouseenter',function () {
+        $('#right-backtop li').css('display','block');
+        $('#right-backtop li').css('background','orangered')
+    });
+    $('#right-backtop ul').on('mouseleave',function () {
+        $('#right-backtop li').css('display','none');
+        $('#right-backtop li').css('background','orangered')
+    });
+    $('#right-backtop ul').on('click',function () {
+        $('html , body').animate({scrollTop: 0},'slow');
+    });
+    $('#for-shop').on('click',function () {
+        var ap=$('#top-nav-login-ing').attr('data-id');
+        if(ap){
+            window.open('shoppingCart.html?id='+ap+'')
+        }else{
+            alert('请登录')
+        }
+    });
+    $('#for-heart').on('click',function () {
+        var ap=$('#top-nav-login-ing').attr('data-id');
+        if(ap){
+            window.open('wish.html?id='+ap+'')
+        }else{
+            alert('请登录')
+        }
+    });
+    $('#for-message').on('click',function () {
+        var ap=$('#top-nav-login-ing').attr('data-id');
+        if(ap){
+            $('#for-message').attr('data-toggle','modal');
+            $('#for-message').attr('data-target','.bs-example-modal-lg');
+            Server1();
+
+            //发送消息，接收消息
+            var socket=new WebSocket('ws://172.16.8.13:9999');
+            /*建立连接接受消息*/
+            socket.onopen=function () {
+                socket.onmessage=function (ev) {//传过来的数据其实在 ec.data
+                    var json=JSON.parse(ev.data);
+                    $('#Sealed-top').append(
+                        ' <div id="receiver-all"><div class="receiver" style="clear: both;color: black;font-size: 20px;height: 100px;"><div style="float:right;"><img src='+json.img+' style="width:50px;height:50px;border-radius:200px;float:right "/></div><div class="div1" style="float:right;background-color:#E6A23C;margin:0 10px 10px 20px;padding:10px 0px 10px 10px;border-radius:7px;"><div class="right_triangle" style="height:0px;width:0px;border-width:8px;border-style:solid;border-color:transparent transparent transparent #E6A23C;position: relative;right:-16px;top:3px;float: right;"></div><span id="message" style="clear:both;color: black;font-size: 20px;height: 100px;">'+json.msg+'</span></div></div><div class="receiver-date" style="width: 100%;height: 50px;text-align: center;float:right;">'+json.dataa+'</div></div>');
+
+                    $('#Sealed-top').scrollTop( $('#Sealed-top')[0].scrollHeight );
+                    $('#all').scrollTop( $('#all')[0].scrollHeight );
+                }
+            };
+            $('#user-btn').click(function () {
+                function Appendzero(obj) {
+                    if(obj<10) {
+                        return '0'+obj;
+                    }
+                    else{
+                        return obj;
+                    }
+                }
+
+                var ser=$('#top-nav-login-ing').attr('data-id');
+                var n=$('#S-name').html();
+                var date1 = new Date();
+                var a = date1.getFullYear()
+                var b = date1.getMonth() + 1;
+                var c = date1.getDate();
+                var d = date1.getHours();
+                var e = date1.getMinutes();
+                var f = date1.getSeconds();
+                var g=a+'-'+Appendzero(b)+'-'+Appendzero(c)+' '+Appendzero(d)+':'+Appendzero(e)+':'+Appendzero(f);
+
+
+                this.datetime = g;
+                var h=$('#headx').attr('src');
+                console.log(h);
+                var msg = {"img": h, "msg": $('#msg').val(), "dataa": this.datetime}
+
+
+                function Server2() {
+                    $.ajax({
+                        url: '/Serverfind7',
+                        data:{
+                            username:n,
+                            message:msg.msg,
+                            date:g,
+                            replyid:ser,
+                        },
+                    });
+                    console.log(n)
+                    console.log(msg.msg)
+                    console.log(g)
+                    console.log(ser)
+                }
+                Server2();
+                socket.send(JSON.stringify(msg));
+                $('#msg').val('');
+            });
+        }else{
+            alert('请登录')
+        }
+    });
+    $('#top-nav-login-ing img').on('click',function () {
+        var OID=$('#top-nav-login-ing').attr('data-id');
+        window.open('personal.html?g_id='+OID+'')
+    });
+    $('#top-nav-login-ing .nav-one').on('click',function () {
+        var OID=$(this).attr('data-id');
+        window.open('PersonalCenter.html?g_id='+OID+'')
+    });
+
+    $('#ugamemore a').on('mousemove',function () {
+        $('#ugamemore ul').css('display','block')
+    });
+    $('#ugamemore').on('mouseleave',function () {
+        $('#ugamemore ul').css('display','none')
+    });
+    $('#ugameround a').on('mousemove',function () {
+        $('#ugameround ul').css('display','block')
+    });
+    $('#ugameround').on('mouseleave',function () {
+        $('#ugameround ul').css('display','none')
+    });
+    $('#top-nav-search-change li').on('click',function () {
+        var a=$(this).html();
+        var b=$(this).val();
+        $('#top-nav-search-change button').html(a);
+        $('#top-nav-search-change button').val(b);
+    });
+    $('#search-text-btn').on('click',function () {
+
+        var a=$('#search-text').val();
+        var b=$('#top-nav-search-change button').val();
+        console.log(b);
+        if(b==1){
+
+            $.ajax({
+                    url:'/searchG',
+                    data:{
+                        id:a
+                    },
+                    success:function (res) {
+                        if(!res.data[0]){
+                            alert('没有符合的游戏,请重新输入');
+                            $('#search-text').val('')
+                        }else{
+
+                            var x=res.data[0].g_id;
+                            window.open('products.html?g_id='+x+'', "_self")
+                        }
+                    }
+                }
+            )
+
+        }else if(b==3){
+            window.open('indexSearch.html?searchResult='+a+'', "_self")
+        }else if(b==2){
+            console.log(a);
+            $.ajax({
+                    url:'/searchR',
+                    data:{
+                        id:a
+                    },
+                    success:function (res) {
+                        if(!res.data[0]){
+                            alert('没有符合的周边,请重新输入');
+                            $('#search-text').val('')
+                        }else{
+                            var t=res.data[0].m_id;
+                            window.open('shop.html?id='+t+'', "_self")
+                        }
+
+                    }
+                }
+            )
+
+        }
+
+    });
+    $('#out-login').on('click',function () {
+        var a=window.location.href;
+
+        $.ajax({
+           url:'/exit',
+           data:{
+               id:a
+           },
+           success:function (res) {
+           }
+         }
+        )
+    })
+
+    //客服
+    function Server1() {
+        var ser=$('#top-nav-login-ing').attr('data-id');
+
+        $.ajax({
+            url: '/Serverfind4',
+            data:{
+                id:ser
+            },
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('#Sealed-top').append(`
+                        <div class="Sealed-all">
+                            <div class="Sealed">
+                                <div><img src="http://localhost:8081/images/2.jpg"/></div>
+                                <div>
+                                    <div class="left_triangle"></div>
+                                    <span>${res[i].s_reply}</span>
+                                </div>
+                            </div>
+                            <div class="Sealed-date">${res[i].s_replydate}</div>
+                        </div>
+                `)
+                }
+            }
+        })
+        $.ajax({
+            url: '/Serverfind5',
+            data:{
+                id:ser
+            },
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('#Sealed-top').append(`
+                        <div class="receiver-all" >
+                            <div class="receiver"><div>
+                                <img src="${res[i].u_photo}"/>
+                            </div>
+                            <div class="div1"><div class="right_triangle"></div>
+                                <span>${res[i].s_message}</span></div>
+                        </div>
+                            <div class="receiver-date">${res[i].s_date}</div>
+                        </div>
+                `)
+                }
+            },
+        })
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,1283 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/Center.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div id="all">
+    <div class="row" id="row2">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="box">
+            <%-include nav.html%>
+        </div>
+    </div>
+    <div class="row" id="body_center">
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+
+        <!--选项-->
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="col-xs-3 col-sm-3 col-md-3" id="aul">
+
+                <!--<div id="box1">-->
+                <!--<p class="bt">订单中心</p>-->
+                <!--<ul>-->
+                <!--<li>我的订单</li>-->
+                <!--<li>我的点评</li>-->
+                <!--<li>我的游戏</li>-->
+                <!--</ul>-->
+                <!--<p class="bt">我的账户</p>-->
+                <!--<ul>-->
+                <!--<li>基本信息</li>-->
+                <!--<li>账号安全</li>-->
+                <!--<li>收货地址</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--测试选项卡-->
+                <div id="box1">
+                    <p class="bt">订单中心</p>
+                    <ul class="nav nav-tabs nav-stacked" role="tablist">
+                        <li role="presentation" id="li1" class="active"><a href="#option7" aria-controls="option7" role="tab" data-toggle="tab"></a></li>
+                        <li role="presentation"><a href="#option1" aria-controls="option1" role="tab" data-toggle="tab">我的订单</a></li>
+                        <li role="presentation"><a href="#option2" aria-controls="option2" role="tab" data-toggle="tab">我的点评</a></li>
+                        <li role="presentation"><a href="#option3" aria-controls="option3" role="tab" data-toggle="tab">我的游戏</a></li>
+                        <p class="bt">我的账户</p>
+                        <li role="presentation" id="li4"><a href="#option4" aria-controls="option4" role="tab" data-toggle="tab">基本信息</a></li>
+                        <li role="presentation"><a href="#option5" aria-controls="option5" role="tab" data-toggle="tab">账号安全</a></li>
+                        <li role="presentation"><a href="#option6" aria-controls="optipn6" role="tab" data-toggle="tab">收货地址</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    ...
+
+
+                </div>
+
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9" id="xk">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="option7">
+                        <div id="box2" >
+                            <div id="first">
+                                <div id="player">
+
+                                    <!--<img src="../images/头像.png"/>-->
+                                    <!--<p>雪儿</p>-->
+                                </div>
+
+                                <span id="sf">玩家</span>
+                                <a href="javascript:void(0)">进入个人主页 ></a>
+                                <span class="glyphicon glyphicon-edit"aria-hidden="true" id="xg">修改资料</span>
+                            </div>
+                        </div>
+                        <div id="box3">
+                            <p>心愿单</p>
+                            <span>查看全部 ></span>
+
+                            <table class="table xinyuan">
+                                <!--<tr class ='tab-body'>-->
+                                <!--<td><img src="../images/diangdan.jpg" height="80" width="135"/></td>-->
+                                <!--<td colspan="2">-->
+                                <!--威洛布鲁克邮局-->
+                                <!--</td>-->
+                                <!--<td></td>-->
+                                <!--<td></td>-->
+                                <!--<td class="pirce">￥50.00</td>-->
+                                <!--<td><button type="button" class="btn btn-info" class="zhifu">加入购物车</button></td>-->
+                                <!--</tr>-->
+
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane " id="option1">
+
+
+                        <div id="Order">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#Allorders" aria-controls="home" role="tab" data-toggle="tab">全部订单</a></li>
+                                <li role="presentation"><a href="#Hang" aria-controls="profile" role="tab" data-toggle="tab">未完成</a></li>
+                                <li role="presentation"><a href="#Unpaid" aria-controls="messages" role="tab" data-toggle="tab">已完成</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="Allorders">
+                                    <table class="table dingdan alldd">
+                                        <tr>
+                                            <th colspan="2">商品名称</th>
+                                            <th>下单日期</th>
+                                            <th>订单号</th>
+                                            <th>总计</th>
+                                            <th colspan="2">订单状态</th>
+                                        </tr>
+                                        <!--<tr class ='tab-body'>-->
+                                            <!--<td><img src="../images/diangdan.jpg" height="80" width="135"/></td>-->
+                                            <!--<td>-->
+                                                <!--威洛布鲁克邮局-->
+                                            <!--</td>-->
+                                            <!--<td>2018-12-07 14:24:24</td>-->
+                                            <!--<td>3130250</td>-->
+                                            <!--<td>￥50.00</td>-->
+                                            <!--<td class="last" colspan="2">-->
+                                                <!--<p>未支付</p>-->
+                                                <!--<button type="button" class="btn btn-info" class="zhifu">立即支付</button><br>-->
+                                                <!--<a>取消订单</a>-->
+                                            <!--</td>-->
+                                        <!--</tr>-->
+                                        <!--<p class="none">最近还没有下过订单呢~~~</p>-->
+                                    </table>
+
+
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="Hang">
+                                    <table class="table dingdan airdd">
+                                        <tr>
+                                            <th colspan="2">商品名称</th>
+                                            <th>下单日期</th>
+                                            <th>订单号</th>
+                                            <th>总计</th>
+                                            <th colspan="2">订单状态</th>
+                                        </tr>
+                                        <!--<tr class="tab-body">-->
+                                            <!--<td><img src="../images/diangdan.jpg" height="80" width="135"/></td>-->
+                                            <!--<td>-->
+                                                <!--威洛布鲁克邮局-->
+                                            <!--</td>-->
+                                            <!--<td>2018-12-07 14:24:24</td>-->
+                                            <!--<td>3130250</td>-->
+                                            <!--<td>￥50.00</td>-->
+                                            <!--<td class="last" colspan="2">-->
+                                                <!--<button type="button" class="btn btn-info" class="wancheng">立即完成</button><br>-->
+                                            <!--</td>-->
+                                        <!--</tr>-->
+                                    </table>
+                                    <!--<p class="none">最近还没有未完成的订单呢~~~</p>-->
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="Unpaid">
+                                    <table class="table dingdan unpaid">
+                                        <tr>
+                                            <th colspan="2">商品名称</th>
+                                            <th>下单日期</th>
+                                            <th>订单号</th>
+                                            <th>总计</th>
+                                            <th colspan="2">订单状态</th>
+                                        </tr>
+                                        <!--<tr class ='tab-body'>-->
+                                            <!--<td><img src="../images/diangdan.jpg" height="80" width="135"/></td>-->
+                                            <!--<td>-->
+                                                <!--威洛布鲁克邮局-->
+                                            <!--</td>-->
+                                            <!--<td>2018-12-07 14:24:24</td>-->
+                                            <!--<td>3130250</td>-->
+                                            <!--<td>￥50.00</td>-->
+                                            <!--<td>-->
+                                                <!--<p>已完成</p>-->
+                                            <!--</td>-->
+                                        <!--</tr>-->
+                                    </table>
+                                    <!--<p class="none">最近还没有已完成订单呢~~~</p>-->
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="option2">
+                        <div id="Comment">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <h4>我的点评</h4>
+                                <li role="presentation" class="active"><a href="#Commented" aria-controls="Commented" role="tab" data-toggle="tab">已点评</a></li>
+                                <li role="presentation"><a href="#Nocomment" aria-controls="Nocomment" role="tab" data-toggle="tab">未点评</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="Commented">
+                                    <p>还木有点评过游戏呢~~~</p>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="Nocomment">
+                                    <p>还没有可以点评的游戏呢~~~</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="option3">
+                        <div id="Game_top">
+                            <!-- Split button -->
+                            <div class="btn-group" id="mygame">
+                                <h4>我的游戏</h4>
+                            </div>
+                        </div>
+                        <div id="Game_body">
+                            <table class="table myGames">
+                                <tr>
+                                    <th colspan="2">游戏名称</th>
+                                    <th>游戏类型</th>
+                                    <th>购买时间</th>
+                                    <th>价格</th>
+                                    <th colspan="2"></th>
+                                </tr>
+                                <!--<tr class ='tab-body'>-->
+                                <!--<td><img src="../images/diangdan.jpg" height="80" width="135"/></td>-->
+                                <!--<td>-->
+                                <!--威洛布鲁克邮局-->
+                                <!--</td>-->
+                                <!--<td>2018-12-07 14:24:24</td>-->
+                                <!--<td>3130250</td>-->
+                                <!--<td class="pirce">￥50.00</td>-->
+                                <!--<td><button type="button" class="btn btn-info" class="xiangqing">游戏详情</button></td>-->
+                                <!--</tr>-->
+                                <!--<p>咦，木有游戏呢~~~</p>-->
+                            </table>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="option4">
+                        <div id="information">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12" id="box5"></div>
+                            </div>
+                            <div class="row" id="row3">
+                                <div class="col-xs-2 col-sm-2 col-md-2" ></div>
+                                <div class="col-xs-2 col-sm-2 col-md-2" >
+                                    <div class="Information_img">
+                                    <!--<img src="../images/头像.png"/>-->
+                                    <!--<span class="glyphicon glyphicon-camera" aria-hidden="true" id="photo"></span>-->
+                                    </div>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1" ></div>
+                                <div class="col-xs-6 col-sm-6 col-md-6" >
+                                    <h4>个性介绍不能超过50字</h4>
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_sin">
+                                                <!--<input type="text" class="form-control" id="inputEmail" placeholder="你对别人怎么形容自己">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1" ></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12" id="box6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2" ></div>
+                                <div class="col-xs-2 col-sm-2 col-md-2" >昵称：</div>
+                                <div class="col-xs-6 col-sm-6 col-md-6" >
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_name">
+                                                <!--<input type="text" class="form-control" id="inputEmail2" placeholder="雪儿">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 tishi2" >
+                                    <p>名称重复</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2" ></div>
+                                <div class="col-xs-2 col-sm-2 col-md-2" >电子邮箱：</div>
+                                <div class="col-xs-6 col-sm-6 col-md-6" >
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_email">
+                                                <!--<input type="email" class="form-control" id="inputEmail3" placeholder="2841851940@qq.com">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 tishi2">
+                                    <p>格式不正确</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2" ></div>
+                                <div class="col-xs-2 col-sm-2 col-md-2" >手机：</div>
+                                <div class="col-xs-6 col-sm-6 col-md-6" >
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_phone">
+                                                <!--<input type="text" class="form-control" id="inputEmail4" placeholder="18227100259">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 tishi2" >
+                                    <p>请输入正确的手机号码</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2" ></div>
+                                <div class="col-xs-2 col-sm-2 col-md-2" >性别：</div>
+                                <div class="col-xs-6 col-sm-6 col-md-6" >
+                                    <div class="dropdown Information_sex" id="btn1">
+                                        <button id="h4" class="btn btn-default1 dropdown-toggle " type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span class="csex"></span>
+                                            <span class="caret" ></span>
+                                        </button>
+                                        </button>
+                                        <ul class="dropdown-menu1" aria-labelledby="dropdownMenu1" id="ul1">
+                                            <li><a href="javascript:void(0)">保密&nbsp;</a></li>
+                                            <li><a href="javascript:void(0)">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                            <li><a href="javascript:void(0)">女&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2 " ></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-2 col-sm-2 col-md-2" ></div>
+                                <div class="col-lg-2 col-sm-2 col-md-2" >您的生日：</div>
+                                <div class="col-lg-2 col-sm-2 col-md-2" class="nyr">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_year">
+                                                <!--<input type="email" class="form-control" id="inputEmail6" placeholder="1900">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-2 col-sm-2 col-md-2" class="nyr">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_month">
+                                                <!--<input type="email" class="form-control beath" id="inputEmail7" placeholder="1">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-2 col-sm-2 col-md-2" class="nyr">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-sm-12 Information_day">
+                                                <!--<input type="email" class="form-control beath" id="inputEmail8" placeholder="1">-->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4 col-md-4" ></div>
+                                <div class="col-lg-4 col-sm-4 col-md-4" >
+
+                                    <button type="button" class="btn btn-primary " id="save">保存修改</button>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-md-4" ></div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="option5">
+                        <div id="Safety">
+                            <div class="row">
+                                <div class="col-xs-1 col-sm-1 col-md-1" ></div>
+                                <div class="col-xs-10 col-sm-10 col-md-10" >
+                                    <h4>账号安全</h4>
+                                    <table class="table">
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></td>
+                                            <th colspan="2">设置密码</th>
+                                            <td colspan="8">已设置密码</td>
+                                            <td >修改密码 ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></td>
+                                            <th colspan="2">邮箱绑定</th>
+                                            <td colspan="8">2841851940@qq.com</td>
+                                            <td>修改邮箱 ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></td>
+                                            <th colspan="2">手机绑定</th>
+                                            <td colspan="8">18227100259</td>
+                                            <td>修改手机 ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></td>
+                                            <th colspan="2">微信绑定</th>
+                                            <td colspan="8">未绑定</td>
+                                            <td>立即绑定 ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></td>
+                                            <th colspan="2">新浪微博绑定</th>
+                                            <td colspan="8">未绑定</td>
+                                            <td>立即绑定 ></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1" ></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="option6">
+                        <div id="Address">
+                            <div class="row">
+                                <div class="col-xs-1 col-sm-1 col-md-1"></div>
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <h4>收货地址</h4>
+
+                                    <!--编辑-->
+                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabe1" id="changetest">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content elastic">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form class="form-inline">
+                                                        <div class="form-group">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12" id="bjname">
+                                                                <!--<label for="exampleInputName">姓名：</label>-->
+                                                                <!--<input type="text" class="form-control" id="exampleInputName" placeholder="雪儿">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 " id="bjphone">
+                                                                <!--<label for="exampleInputPhone">手机：</label>-->
+                                                                <!--<input type="text" class="form-control" id="exampleInputPhone" placeholder="1827100259">-->
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 " id="bjtel">
+
+                                                                <!--<label for="exampleInputTel">固话：</label>-->
+                                                                <!--<input type="text" class="form-control" id="exampleInputTel" placeholder="1234567890">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 " id="bjaddress">
+                                                                <!--<label for="exampleInputAddress">所在地区：</label>-->
+                                                                <!--<input type="text" class="form-control" id="exampleInputAddress" placeholder="四川-成都">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 " id="bjdeaddress">
+                                                                <!--<label for="exampleInputAds">详细地址：</label>-->
+                                                                <!--<input type="text" class="form-control" id="exampleInputAds" placeholder="双祥社区25号院13栋">-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 " id="bjcode">
+                                                                <!--<label for="exampleInputY">邮政编码：</label>-->
+                                                                <!--<input type="text" class="form-control" id="exampleInputY" placeholder="">-->
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary">确认</button>
+                                                    <button type="button" class="btn btn-default1" data-dismiss="modal">关闭</button>
+
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                    <!--新增-->
+                                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabe1" id="addtest">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content elastic">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabe2">新建收货地址</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <form class="form-horizontal">
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                                            <label  class="col-lg-2 col-md-2 col-sm-2 control-label" >姓名:</label>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="text" class="form-control" id="Name" placeholder="请输入您的姓名" onblur="tishi(this)">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 tishi">
+                                                                <p>请输入正确的姓名！</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                                            <label  class="col-lg-2 col-md-2 col-sm-2 control-label" >手机:</label>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="text" class="form-control" id="Phone" placeholder="请输入您的11位手机号" onblur="tishi1(this)">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 tishi">
+                                                                <p>请输入正确的联系方式！</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                                            <label  class="col-lg-2 col-md-2 col-sm-2 control-label" >固话:</label>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="text" class="form-control" id="DPhone" placeholder="请输入您的固定电话" onblur="tishi2(this)">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 tishi">
+                                                                <p>请输入正确的联系方式！</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                                            <label  class="col-lg-2 col-md-2 col-sm-2 control-label" >所在地区:</label>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="text" class="form-control" id="DAddress" placeholder="请输入您的地址（确认到市级）" onblur="tishi3(this)">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 tishi">
+                                                                <p>请输入正确的地址！</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                                            <label  class="col-lg-2 col-md-2 col-sm-2 control-label" >详细地址:</label>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="text" class="form-control" id="DDAddress" placeholder="请输入您的详细地址" onblur="tishi4(this)">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 tishi">
+                                                                <p>请输入正确的地址！</p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                                                            <label  class="col-lg-2 col-md-2 col-sm-2 control-label" >邮政编码:</label>
+                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                                <input type="text" class="form-control" id="Code" placeholder="请输入您的邮政编码" onblur="tishi5(this)">
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 tishi">
+                                                                <p>请输入正确的邮政编码！</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary"  data-dismiss="modal" id="addadres">确认</button>
+                                                    <button type="button" class="btn btn-default1" data-dismiss="modal">关闭</button>
+
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                    <!--删除-->
+                                    <div class="modal fade" aria-labelledby="myLargeModalLabe3" id="deltest">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content elastic">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">
+                                                        <span>&times;</span>
+                                                    </button>
+                                                    <h4 class="modal-title">是否删除</h4>
+                                                </div>
+                                                <div class="modal-body delete">
+                                                    真的要删除这一项么？
+                                                </div>
+                                                <div class="modal-footer del_btn">
+                                                    <button type="button" data-dismiss="modal" class="btn btn-primary" id="del">确定</button>
+
+                                                    <button type="button" data-dismiss="modal" class="btn btn-default1">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div >
+
+                                    <a href=""  data-toggle="modal" data-target="#addtest">
+                                        <table class="table " id="sh">
+                                            <tr class="adresbtn">
+                                                <td><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></td>
+                                                <th colspan="2">新增收货地址</th>
+                                                <td colspan="6"></td>
+                                                <!--<td colspan="3">你已创建0个收货地址，可以创建10个</td>-->
+                                            </tr>
+                                        </table>
+                                    </a>
+                                    <div class="adres">
+
+
+
+
+                                    </div>
+                                    <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                                        <!--<div class="info shdz">-->
+                                            <!--<p>姓名：雪儿</p>-->
+                                            <!--<p>手机：18227100259</p>-->
+                                            <!--<p>固话：12345678910</p>-->
+                                            <!--<p>所在地区：四川-成都</p>-->
+                                            <!--<p>详细地址：天安门</p>-->
+                                            <!--<p>邮政编码：</p>-->
+                                            <!--<div class="info_right">-->
+                                                <!--<a href="" data-toggle="modal" data-target="#deltest">删除</a>-->
+                                                <!--<a href="" data-toggle="modal" data-target="#changetest">编辑</a>-->
+
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    </div>
+</div>
+</body>
+<script>
+    var oH=document.querySelector('#h4');
+    var oUl=document.querySelector('#ul1');
+    var aLi=document.querySelectorAll('#ul1 li');
+
+    oH.onclick=function (ev) {
+        oUl.style.display='block';
+        ev.cancelBubble=true;
+    };
+
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].onclick=function () {
+            oH.innerHTML=this.innerHTML+'<span class="caret" ></span>';
+            oUl.style.display='none';
+        };
+    }
+
+    document.onclick=function () {
+        oUl.style.display='none';
+    };
+
+</script>
+<script>
+    var qwer = 1;
+
+    $('#xg').on('click',function () {
+        $('#li4').css('class','active');
+        $('#option4').css('class','active');
+    });
+
+    // 我的心愿
+    function mywish() {
+        //头像和名称
+        $.ajax({
+            url:'/EssentialInformation',
+            success:function (res) {
+                // console.log(res)
+                $('#player').append(`
+                                            <img src="${res[0].u_photo}"/>
+                                            <p>${res[0].u_name}</p>
+                                       `)
+            }
+        })
+
+
+        $.ajax({
+            url: '/mywish',
+            success: function (res) {
+                        for (var i = 0; i < res.length; i++) {
+                            $('.xinyuan').append(`
+                            <tr class ="tab-body">
+                                 <td><img src="${res[i].p_Path2}"/></td>
+                                 <td colspan="2">${res[i].g_name}</td>
+                                 <td></td>
+                                 <td></td>
+                                 <td class="pirce">￥${res[i].g_price}</td>
+                                 <td><button type="button" class="btn btn-info zhifu">加入购物车</button></td>
+                            </tr>`)
+                        }
+            }
+        });
+        $.ajax({
+            url: '/mywish2',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.xinyuan').append(`
+                            <tr class ="tab-body">
+            <td><img src="${res[i].m_show}"/></td>
+            <td colspan="2">${res[i].m_name}</td>
+            <td></td>
+            <td></td>
+            <td class="pirce">${res[i].m_price}</td>
+            <td><button type="button" class="btn btn-info zhifu" >加入购物车</button></td>
+            </tr>`)
+                    $('.zhifu').on('click',function () {
+                        var id=$(this).attr('data-id');
+                        window.open('shop.html?id='+id+'');
+
+                        $.ajax({
+                            url:'/shoppping',
+                            data:{uid:1,mid:id},
+                            success:function (res) {
+                                alert('ok');
+                            }
+                        });
+
+                        $.ajax({
+                            url:'/shoppping2',
+                            data:{uid:1,mid:id},
+                            success:function (res) {
+                                alert('ok');
+                            }
+                        });
+                    })
+                }
+            }
+        })
+
+    }
+    mywish();
+
+    //我的订单
+    function myorder() {
+
+        //全部订单
+        $.ajax({
+            url: '/myorder',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.alldd').append(`
+                                    <tr class ="tab-body">
+                                        <td><img src="${res[i].p_Path2}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].g_name}
+                                        </td>
+                                        <td>${res[i].o_ordertime}</td>
+                                        <td>${res[i].o_ordernum}</td>
+                                        <td>￥${res[i].g_price}</td>
+                                        <td colspan="2">
+                                            <p>${res[i].o_orderstatus}</p>
+                                        </td>
+                                    </tr>
+                `)
+                }
+            }
+        })
+
+        $.ajax({
+            url: '/myorder2',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.alldd').append(`
+                                    <tr class ="tab-body">
+                                        <td><img src="${res[i].m_show}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].m_name}
+                                        </td>
+                                        <td>${res[i].p_ordertime}</td>
+                                        <td>${res[i].p_ordernum}</td>
+                                        <td>￥${res[i].m_price}</td>
+                                        <td colspan="2">
+                                            <p>${res[i].p_orderstatus}</p>
+                                        </td>
+                                    </tr>
+                `)
+                }
+            }
+        })
+
+
+        //未完成
+        $.ajax({
+            url: '/myrough',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.airdd').append(`
+                                    <tr class ="tab-body" >
+                                        <td><img src="${res[i].p_Path2}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].g_name}
+                                        </td>
+                                        <td>${res[i].o_ordertime}</td>
+                                        <td>${res[i].o_ordernum}</td>
+                                        <td>￥${res[i].g_price}</td>
+                                        <td class="last" colspan="2">
+                                            <p>未支付</p>
+                                            <button type="button" class="btn btn-info payment" data-index="${res[i].g_id}">立即支付</button><br>
+                                            <a>取消订单</a>
+                                        </td>
+                                    </tr>
+                `)
+
+                }
+                $('.last').on('click','.payment',function () {
+                    var id=$(this).attr('data-index');
+                    window.open('pay.html?id='+id+'');
+                })
+            }
+        })
+
+        $.ajax({
+            url: '/myrough2',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.airdd').append(`
+                                    <tr class ="tab-body" >
+                                        <td><img src="${res[i].m_show}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].m_name}
+                                        </td>
+                                        <td>${res[i].p_ordertime}</td>
+                                        <td>${res[i].p_ordernum}</td>
+                                        <td>￥${res[i].m_price}</td>
+                                        <td class="last" colspan="2">
+                                            <p>未支付</p>
+                                            <button type="button" class="btn btn-info pay" data-index="${res[i].m_id}">立即支付</button><br>
+                                            <a>取消订单</a>
+                                        </td>
+                                    </tr>
+                `)
+
+                }
+                $('.last').on('click','.pay',function () {
+                    var id=$(this).attr('data-index');
+                    window.open('pay.html?id='+id+'');
+                })
+            }
+        })
+
+        //已完成
+        $.ajax({
+        url: '/myover',
+            success: function (res) {
+
+            for (var i = 0; i < res.length; i++) {
+                console.log(res)
+                console.log(res.length);
+                $('.unpaid').append(`
+                    <tr class ="tab-body">
+                                        <td><img src="${res[i].p_Path2}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].g_name}
+                                        </td>
+                                        <td>${res[i].o_ordertime}</td>
+                                        <td>${res[i].o_ordernum}</td>
+                                        <td>￥${res[i].g_price}</td>
+                                        <td colspan="2">
+                                            <p>已完成</p>
+                                        </td>
+                    </tr>
+                `)
+            }
+        }
+    })
+        $.ajax({
+            url: '/myover2',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.unpaid').append(`
+                    <tr class ="tab-body">
+                                        <td><img src="${res[i].m_show}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].m_name}
+                                        </td>
+                                        <td>${res[i].p_ordertime}</td>
+                                        <td>${res[i].p_ordernum}</td>
+                                        <td>￥${res[i].m_price}</td>
+                                        <td colspan="2">
+                                            <p>已完成</p>
+                                        </td>
+                    </tr>
+                `)
+                }
+            }
+        })
+
+    }
+    myorder();
+
+    //我的游戏
+    function myGames() {
+        $.ajax({
+            url: '/myGames',
+            success: function (res) {
+                for (var i = 0; i < res.length; i++) {
+                    $('.myGames').append(`
+                                    <tr class ="tab-body">
+                                        <td><img src="${res[i].p_Path2}" height="80" width="135"/></td>
+                                        <td>
+                                            ${res[i].g_name}
+                                        </td>
+                                        <td>${res[i].g_publisher}</td>
+                                        <td>${res[i].g_time}</td>
+                                        <td>￥${res[i].g_price}</td>
+                                        <td colspan="2" class="gameDetails">
+                                            <button type="button" class="btn btn-info details" data-index="${res[i].g_id}">游戏详情</button>
+                                        </td>
+                                    </tr>
+                `)
+                }
+                $('.gameDetails').on('click','.details',function () {
+                    var id=$(this).attr('data-index');
+                    window.open('products.html?id='+id+'');
+                })
+            }
+        })
+    }
+    myGames();
+
+    //基本信息
+    function EssentialInformation() {
+        //大概信息
+        $.ajax({
+            url:'/EssentialInformation',
+            success:function (res) {
+                console.log(res)
+                $('.Information_img').append(`
+                                            <img src="${res[0].u_photo}"/>
+                                            <span class="glyphicon glyphicon-camera" aria-hidden="true" id="photo"></span>
+                                           `)
+                $('.Information_sin').append(`
+                                        <input type="text" class="form-control dagai" id="inputEmail"  placeholder=${res[0].u_atuograph} >
+                                       `)
+                $('.Information_name').append(`
+                                        <input type="text" class="form-control dagai" id="inputEmail2"  placeholder=${res[0].u_name} >
+                                        `)
+                $('.Information_email').append(`
+                                    <input type="email" class="form-control dagai" id="inputEmail3" placeholder=${res[0].u_mail}>
+                                         `)
+                $('.Information_phone').append(`
+                                    <input type="text" class="form-control dagai" id="inputEmail4"   placeholder=${res[0].u_phone} >
+                                         `)
+                $('.csex').append(`  ${res[0].u_sex}&nbsp;&nbsp;&nbsp;&nbsp; `)
+            }
+        })
+        //生日
+        $.ajax({
+            url:'/beath',
+            success:function (res) {
+                console.log(res)
+                $('.Information_year').append(`
+                                            <input type="email" class="form-control beath dagai" id="inputEmail6" placeholder=${res[0].year}>
+                                           `)
+                $('.Information_month').append(`
+                                        <input type="email" class="form-control beath dagai" id="inputEmail7" placeholder=${res[0].month}>
+                                       `)
+                $('.Information_day').append(`
+                                        <input type="email" class="form-control beath dagai" id="inputEmail8" placeholder=${res[0].day}>
+                                        `)
+            }
+        })
+
+        $('#save').on('click',function () {
+            var a = $('#inputEmail').val();
+            var b = $('#inputEmail2').val();
+            var c = $('#inputEmail3').val();
+            var d = $('#inputEmail4').val();
+            var e = $('.csex').val();
+            $.ajax({
+                url:'/modifybtn',
+                data:{
+                    a:a,
+                    b:b,
+                    c:c,
+                    d:d,
+                    e:e
+                },
+                success:function (res) {
+                    $('#inputEmail').val(a);
+                    $('#inputEmai2').val(b);
+                    $('#inputEmai3').val(c);
+                    $('#inputEmai4').val(d);
+                    if(e==null){
+                        $('.csex').html('保密');
+                    }else{
+                        $('.csex').html(e);
+                    }
+                    $('#inputEmail6').val($('#inputEmail6').val());
+                    $('#inputEmail7').val($('#inputEmail7').val());
+                    $('#inputEmail8').val($('#inputEmail8').val());
+                }
+            })
+        })
+
+
+        //收货地址
+        $.ajax({
+            url:'/address',
+            success:function (res) {
+                console.log(res);
+                $('.adres').html('');
+                for (var i = 0; i < res.length; i++) {
+                    $('.adres').append(`
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                           <div class="info shdz">
+                                <p>姓名：${res[i].a_name}</p>
+                                <p>手机：${res[i].a_phone}</p>
+                                <p>固话：${res[i].telephone}</p>
+                                <p>所在地区：${res[i].a_address}</p>
+                                <p>详细地址：${res[i].inTheArea}</p>
+                                <p>邮政编码：${res[i].postalcode}</p>
+                                <div class="info_right add_btn">
+                                            <a href="" id="add_del" data-toggle="modal" data-target="#deltest">删除</a>
+                                            <a href="" id="add_edit" data-toggle="modal" data-target="#changetest" data-index="${res[i].a_id}">编辑</a>
+
+                                </div>
+                           </div>
+                        </div>
+                                     `)
+                }
+                //编辑
+                $('.add_btn').on('click','#add_edit',function () {
+                     qwer=$(this).attr('data-index');
+                    //编辑框
+
+                    function bjInformation() {
+                        //编辑地址
+
+                        $.ajax({
+                            url:'/address1',
+                            data:{
+                                id:qwer
+                            },
+
+                            success:function (res) {
+                                $('#bjname').html('');
+                                $('#bjphone').html('');
+                                $('#bjtel').html('');
+                                $('#bjaddress').html('');
+                                $('#bjdeaddress').html('');
+                                $('#bjcode').html('');
+
+                                $('#bjname').append(`
+                        <label for="exampleInputName">姓名：</label>
+                        <input type="text" class="form-control" id="exampleInputName" placeholder="${res[0].a_name}">
+                                     `)
+                                $('#bjphone').append(`
+                         <label for="exampleInputPhone">手机：</label>
+                         <input type="text" class="form-control" id="exampleInputPhone" placeholder="${res[0].a_phone}">
+                                     `)
+                                $('#bjtel').append(`
+                         <label for="exampleInputTel">固话：</label>
+                         <input type="text" class="form-control" id="exampleInputTel" placeholder="${res[0].telephone}">
+                                     `)
+                                $('#bjaddress').append(`
+                         <label for="exampleInputAddress">所在地区：</label>
+                                                                <input type="text" class="form-control" id="exampleInputAddress" placeholder="${res[0].a_address}">
+                                     `)
+                                $('#bjdeaddress').append(`
+                         <label for="exampleInputAds">详细地址：</label>
+                         <input type="text" class="form-control" id="exampleInputAds" placeholder="${res[0].inTheArea}">
+                                     `)
+                                $('#bjcode').append(`
+                         <label for="exampleInputY">邮政编码：</label>
+                         <input type="text" class="form-control" id="exampleInputY" placeholder="${res[0].postalcode}">
+                                     `)
+                            }
+                        })
+
+                    }
+                    bjInformation();
+                })
+
+                //删除
+                $('.del_btn').on('click','#del',function () {
+                    qwer=$('#add_edit').attr('data-index');
+                    //编辑框
+
+                    function bjInformation() {
+                        //编辑地址
+
+                        $.ajax({
+                            url:'/deladdress',
+                            data:{
+                                id:qwer
+                            },
+                            success:function (res) {
+                                EssentialInformation();
+                            }
+
+                        })
+
+                    }
+                    bjInformation();
+                })
+            }
+        })
+        //收货地址按钮
+        $.ajax({
+            url:'/countadres',
+            success:function (res) {
+                $('.adresbtn').html('');
+                    $('.adresbtn').append(`
+                        <td colspan="3">你已创建${res[0].num1}个收货地址，可以创建${res[0].num2}个</td>
+                                     `)
+                }
+        })
+    }
+    EssentialInformation();
+
+    //正则
+    var reg={
+        name:/^[\u4e00-\u9fa5]{2,6}$/,
+        phone:/1[3-9]\d{9}/,
+        address:/^[\u4e00-\u9fa5]{2,10}$/,
+        PostalCode:/^[1-9]\d{5,6}$/
+    };
+
+    //新建框
+    $('#addadres').on('click',function addaddress() {
+
+                    var a = $('#Name').val();
+                    var b = $('#Phone').val();
+                    var c = $('#DPhone').val();
+                    var d = $('#DAddress').val();
+                    var e = $('#DDAddress').val();
+                    var f = $('#Code').val();
+                    $.ajax({
+                        url: '/addaddress',
+                        data: {
+                            na: a,
+                            ph: b,
+                            ad: d,
+                            co: f,
+                            te: c,
+                            ina: e
+                        },
+                        success: function (res) {
+                            EssentialInformation();
+                        }
+    })
+    })
+
+
+    function tishi(obj){
+        var a=obj.value;
+        var flag1=reg.name.test(a);
+        if(a=="" || flag1==false){
+            $(obj).parent().next().css("display","block")
+        }else{
+            $(obj).parent().next().css("display","none")
+        }
+    }
+    function tishi1(obj){
+        var a=obj.value;
+        var flag1=reg.phone.test(a);
+        if(a=="" || flag1==false){
+            $(obj).parent().next().css("display","block")
+        }else{
+            $(obj).parent().next().css("display","none")
+        }
+    }
+    function tishi2(obj){
+        var a=obj.value;
+        var flag1=reg.phone.test(a);
+        if(a=="" || flag1==false){
+            $(obj).parent().next().css("display","block")
+        }else{
+            $(obj).parent().next().css("display","none")
+        }
+    }
+    function tishi3(obj){
+        var a=obj.value;
+        var flag1=reg.address.test(a);
+        if(a=="" || flag1==false){
+            $(obj).parent().next().css("display","block")
+        }else{
+            $(obj).parent().next().css("display","none")
+        }
+    }
+    function tishi4(obj){
+        var a=obj.value;
+        var flag1=reg.Deaddress.test(a);
+        if(a=="" || flag1==false){
+            $(obj).parent().next().css("display","block")
+        }else{
+            $(obj).parent().next().css("display","none")
+        }
+    }
+    function tishi5(obj){
+        var a=obj.value;
+        var flag1=reg.PostalCode.test(a);
+        if(a=="" || flag1==false){
+            $(obj).parent().next().css("display","block")
+        }else{
+            $(obj).parent().next().css("display","none")
+        }
+    }
+
+    function flag2() {
+        var a=$('#Name').val();
+        var b=$('#Phone').val();
+        var c=$('#DPhone').val();
+        var d=$('#DAddress').val();
+        var f=$('#Code').val();
+        if (!reg.name.test(a) || !reg.phone.test(b) || !reg.phone.test(c) || !reg.address.test(d)  || !reg.PostalCode.test(f)){
+            $('#add').attr("disabled", true);
+        }else {
+            $('#add').attr("disabled", false);
+        }
+    }
+    flag2();
+    $('#Name').change(function () {
+        flag2();
+    })
+    $('#Phone').change(function () {
+        flag2();
+    })
+    $('#Dphone').change(function () {
+        flag2();
+    })
+    $('#DAddress').change(function () {
+        flag2();
+    })
+    $('#DDAddress').change(function () {
+        flag2();
+    })
+    $('#Code').change(function () {
+        flag2();
+    })
+
+
+
+
+
+
+
+
+</script>
+
+</html>

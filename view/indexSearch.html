@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+<script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indexSearch.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+<body style="background-color: #202539;">
+<%-include nav.html%>
+<div id="index-search-body">
+    <div id="index-search-box">
+        <div id="box-left">
+            <div id="left-topbox">
+                <h4>社区中的搜索结果</h4>
+
+                <p>关于"<span id="search-re"></span>"的搜索结果</p>
+            </div>
+            <div id="left-result">
+                <div id="left-result-search">
+                    <ul id="left-result-search-for">
+                        <li class="active" id="utie">U贴</li>
+                        <li id="dianping">点评</li>
+                        <li id="uyou">U友</li>
+                        <li id="groupteam">小组</li>
+                    </ul>
+                </div>
+                <div id="left-result-ago">
+
+                    <ul> <!--u贴 li-->
+
+                        共找到<span>555</span>相关结果
+
+
+
+                        <!--<li class="result-utie">-->
+                        <!--<div class="result-utiebody">-->
+                        <!--<div class="utie-left">-->
+                        <!--<p><b>你tm是谁</b></p>-->
+                        <!--</div>-->
+                        <!--<div class="utie-right">-->
+                            <!--<div><img src="" alt=""></div>-->
+                            <!--<div> <p>2018-1-3发布于<span>神他妈坑底的制作组11111111111111</span></p></div>-->
+                        <!---->
+                       <!---->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+
+                        <!--评论-->
+<!--
+                        <li class="result-remark">
+                            <div class="result-remarkbody">
+                                <div class="remark-left">
+                                    <p>666</p>
+                                    <div class="remark-leftdiv">
+                                        <p>评分 ： <span>666<span>黑暗之魂</span></span></p>
+                                    </div>
+                                </div>
+                                <div class="remark-right">
+                                    <img src="" alt="">
+                                    <p>2018-1-3发布于<span>神他妈坑底的制作组11111111111111</span></p>
+                                </div>
+                            </div>
+                        </li>-->
+
+                        <!--果友-->
+
+                      <!--  <li class="result-people">
+                            <div class="result-peoplebody">
+                                <div class="people-left">
+                                    <img src="" alt="">
+                                    <p>666</p>
+                                                     </div>
+                        <div class="people-right">
+                        <button>进入个人主页</button>
+                        </div>
+                        </div>
+                        </li>-->
+
+                        <!--小组-->
+
+                        <li class="result-group">
+                            <div class="result-groupbody">
+                                 <div class="group-left">
+                                     <img src="" alt="">
+                                     <p>我的傻屌轩辕</p>
+                                 </div>
+                                 <div class="group-right">
+                                     <div class="right-peo">
+                                         <p>666</p>
+                                         <p>成员</p>
+                                     </div>
+                                     <div class="right-utie">
+                                         <p>666</p>
+                                         <p>主题数</p>
+                                     </div>
+                                     <button>进入小组</button>
+                                 </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="box-right">
+            <div id="right-topbox">
+                <div id="right-top-head">
+                   <!-- <img src="./../public/images/yougame2.png" alt="">
+                    <div>
+                        <p>wwwww</p>
+                        <h3>你说是就是</h3>
+                        <h4>游戏数:993</h4>
+                    </div>-->
+                </div>
+            </div>
+            <div id="right-botbox">
+                <ul id="right-bot-down">
+                    <div class="down-top">推荐商品</div>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<%-include bottom.html%>
+
+</body>
+<script>
+
+    function login(){
+        var str=window.location.search.substr(1).split('=');
+        var b=decodeURI(str[1]);
+        $('#search-re').html(b);
+    }
+    function first(){
+        var str=window.location.search.substr(1).split('=');
+        var b=decodeURI(str[1]);
+
+        if(b==''){
+            $('#left-result-ago').html('');
+            $('#left-result-ago').append(`共找到 <span>0</span> 条相关结果`);
+        }else{
+            $.ajax({
+
+                url:'/searchUtie',
+                data: {
+                    data1:b
+                },
+                success:function (res) {
+
+                        $('#left-result-ago').html('');
+                        $('#left-result-ago').append(` 共找到 <span>${res.data.length}</span> 相关结果`);
+                        $(res.data).each(function () {
+
+                            $('#left-result-ago').append(`
+
+                        <li class="result-utie">
+                        <div class="result-utiebody">
+                        <div class="utie-left">
+                        <p data-id="${this.p_id}" class="shabi"><b >${this.p_text}</b></p>
+                        </div>
+                        <div class="utie-right" >
+                         <div class="${this.u_id}cc"><img src="" alt="" data-id=""></div>
+                         <div><p class="${this.a_id}bb" data-id="${this.a_id}"></p></div>
+                        
+                        </div>
+                        </div>
+                        </li>`);
+
+                            var a=this.a_id+'bb';
+                            var b=this.u_id+'cc';
+                            var c=this.p_date;
+
+                            $.ajax({
+                                url:'/searchUser',
+                                data: {
+                                    Id:this.u_id
+                                },
+                                success:function (res) {
+                                    $("#left-result-ago li .result-utiebody .utie-right ."+b+"").html('');
+                                    $("#left-result-ago li .result-utiebody .utie-right ."+b+"").append(`<img src="${res.data[0].u_photo}" alt="" data-id="${res.data[0].u_id}">`);
+                                    $("#left-result-ago li div .utie-right div img").on('click',function () {
+                                        var OID=$(this).attr('data-id');
+                                        window.open('personal.html?g_id='+OID+'');
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url:'/searchAllteam',
+                                data: {
+                                    Id:this.a_id
+                                },
+                                success:function (res) {
+                                    $("#left-result-ago li div .utie-right ."+a+"").html('');
+                                    $("#left-result-ago li div .utie-right ."+a+"").html(c);
+                                    $("#left-result-ago li div .utie-right ."+a+"").append(`<span>${res.data[0].a_name}</span>`);
+
+                                }
+                            });
+
+
+                        });
+                    $('#left-result-ago li div div .shabi').on('click',function () {
+                        var OID=$(this).attr('data-id');
+                        window.open('Utie.html?p_id='+OID+'')
+                    });
+                    $('#left-result-ago li div .utie-right p').on('click',function () {
+                        var OID=$(this).attr('data-id');
+                        window.open('officialDetails.html?id='+OID+'')
+                    });
+                }
+            })
+        }
+
+    }
+    function second() {
+        var str = window.location.search.substr(1).split('=');
+        var b = decodeURI(str[1]);
+
+        if (b == '') {
+            $('#left-result-ago').html('');
+            $('#left-result-ago').append(`共找到 <span>0</span> 条相关结果`);
+        } else {
+            $.ajax({
+
+                url: '/searchGamemes',
+                data: {
+                    data: b
+                },
+                success: function (res) {
+                    $('#left-result-ago').html('');
+                    $('#left-result-ago').append(` 共找到 <span>${res.data.length}</span> 相关结果`);
+                    $(res.data).each(function () {
+
+                        $('#left-result-ago').append(`
+
+                         <li class="result-remark">
+                            <div class="result-remarkbody">
+                                <div class="remark-left">
+                                    <p>${this.m_message}</p>
+                                    <div class="remark-leftdiv">
+                                        <p>评分 ：<span>${this.m_score}<span class="${this.g_id}game" data-id="${this.g_id}"></span></span></p>
+                                    </div>
+                                </div>
+                                <div class="remark-right">
+                                    <div class="${this.u_id}user"></div>
+                                     <div class="${this.g_id}games"><p>${this.m_date}<span data-id="${this.g_id}"></span></p></div>
+
+                                </div>
+                            </div>
+                        </li>`);
+                        var a=this.g_id+'game';
+                        var b=this.u_id+'user';
+                        var c=this.g_id+'games';
+                        $.ajax({
+
+                            url:'/searchUser',
+                            data: {
+                                Id:this.u_id
+                            },
+                            success:function (res) {
+                                $("#left-result-ago li div .remark-right ."+b+"").html('');
+                                $("#left-result-ago li div .remark-right ."+b+"").append(`
+                                   <img src="${res.data[0].u_photo}" alt="" data-id="${res.data[0].u_id}"">
+                                `);
+
+                                $("#left-result-ago li div .remark-right ."+b+" img").on('click',function () {
+                                    var OID=$(this).attr('data-id');
+                                    window.open('personal.html?g_id='+OID+'');
+
+                                });
+                            }
+
+                        });
+                        $.ajax({
+                            url: '/searchallGamemes',
+                            data: {
+                                Id:this.g_id
+                            },
+                            success:function (res) {
+                                var b=res.data[0].g_name;
+                                $("#left-result-ago li div div div p ."+a+"").html(b);
+                                $("#left-result-ago li div .remark-right ."+c+" p span").html(b);
+                                $("#left-result-ago li div .remark-left p span ."+a+"").on('click',function () {
+                                    var OID=$(this).attr('data-id');
+                                    console.log(OID);
+                                    window.open('products.html?g_id='+OID+'');
+                                });
+                                $("#left-result-ago li div .remark-right ."+c+" p span").on('click',function () {
+                                    var OID=$(this).attr('data-id');
+                                    console.log(OID);
+                                    window.open('products.html?g_id='+OID+'');
+                                });
+                            }
+                        });
+
+
+
+                    })
+                }
+            })
+        }
+    }
+    function third(){
+        var str = window.location.search.substr(1).split('=');
+        var b = decodeURI(str[1]);
+
+        if (b == '') {
+            $('#left-result-ago').html('');
+            $('#left-result-ago').append(`共找到 <span>0</span> 条相关结果`);
+        } else {
+            $.ajax({
+
+                url: '/searchusername',
+                data: {
+                    name: b
+                },
+                success: function (res) {
+                    $('#left-result-ago').html('');
+                    $('#left-result-ago').append(` 共找到 <span>${res.data.length}</span> 相关结果`);
+                    $(res.data).each(function () {
+
+                        $('#left-result-ago').append(`
+                               <li class="result-people">
+                            <div class="result-peoplebody">
+                                <div class="people-left">
+                                    <img src="${this.u_photo}" alt="">
+                                    <p>${this.u_nickName}</p>
+                                                     </div>
+                        <div class="people-right">
+                        <button data-id="${this.u_id}">进入个人主页</button>
+                        </div>
+                        </div>
+                        </li>
+                   `);
+                    });
+                    $('#left-result-ago li div .people-right button').on('click',function () {
+                        var OID=$(this).attr('data-id');
+                        window.open('personal.html?g_id='+OID+'')
+                    });
+                }
+            })
+        }
+    }
+    function fourth(){
+        var str = window.location.search.substr(1).split('=');
+        var b = decodeURI(str[1]);
+
+        if (b == '') {
+            $('#left-result-ago').html('');
+            $('#left-result-ago').append(`共找到 <span>0</span> 条相关结果`);
+        } else {
+            $.ajax({
+
+                url: '/searchAllteamName',
+                data: {
+                    name: b
+                },
+                success: function (res) {
+                    $('#left-result-ago').html('');
+                    $('#left-result-ago').append(` 共找到 <span>${res.data.length}</span> 相关结果`);
+                    $(res.data).each(function () {
+                        $('#index-group')
+                        $('#left-result-ago').append(`
+                           <li class="result-group">
+                            <div class="result-groupbody">
+                                 <div class="group-left">
+                                     <img src="${this.a_image}" alt="">
+                                     <p>${this.a_name}</p>
+                                 </div>
+                                 <div class="group-right">
+                                     <div class="right-peo">
+                                         <p id="${this.a_id}qqq"></p>
+                                         <p>成员</p>
+                                     </div>
+                                     <div class="right-utie">
+                                         <p id="${this.a_id}ddd"></p>
+                                         <p>主题数</p>
+                                     </div>
+                                     <button data-id="${this.a_id}">进入小组</button>
+                                 </div>
+                            </div>
+                        </li>
+                   `);
+                        var a=this.a_id+'qqq';
+                        var b=this.a_id+'ddd';
+                        $.ajax({
+                            url:'/searchAllteamPeo',
+                            data: {
+                                Id:this.a_id
+                            },
+                            success:function (res) {
+
+                                    $("#left-result-ago li div .group-right .right-peo #"+a+"").html(res.data[0].peo)
+                            }
+                        });
+                        $.ajax({
+                            url:'/searchAllteamutie',
+                            data: {
+                                Id:this.a_id
+                            },
+                            success:function (res) {
+
+                                    $("#left-result-ago li div .group-right .right-utie #"+b+"").html(res.data[0].peo)
+
+                            }
+                        });
+                    });
+                    $('#left-result-ago li div .group-right button').on('click',function () {
+                        var OID=$(this).attr('data-id');
+                        window.open('officialDetails.html?id='+OID+'')
+                    })
+                }
+            })
+        }
+    }
+    function rightid(){
+        var t=$('#top-nav-login-ing').attr('data-id');
+        console.log(t);
+        if(!t){
+            $('#right-topbox #right-top-head').append(`
+                             <img src="images/personal/default.jpg" alt="" data-id="" >
+                    <div>
+                        <p style="text-align: center;font-size: 30px;line-height: 100px;margin-left: -30px" id="to-logn">请登录</p>
+
+
+                    </div>
+                     `);
+            $('#right-topbox #right-top-head div p').on('click',function () {
+                window.open('Signin.html','_self')
+            })
+        }else{
+            $.ajax({
+
+                url: '/searchUser',
+                data: {
+                    Id: t
+                },
+                success: function (res) {
+                     $('#right-topbox #right-top-head').append(`
+                             <img src="${res.data[0].u_photo}" alt="" data-id="${res.data[0].u_id}">
+                    <div>
+                        <p>${res.data[0].u_nickName}</p>
+                        <h3>${res.data[0].u_atuograph}</h3>
+                        <h4>游戏数:993</h4>
+                    </div>
+                     `);
+                    $.ajax({
+
+                        url: '/searchusergame',
+                        data: {
+                            Id:t
+                        },
+                        success: function (res) {
+                            var a=res.data[0].peo;
+
+                            $('#right-topbox #right-top-head div h4').html('游戏数:'+a);
+                        }
+                    });
+                    $('#right-topbox #right-top-head img').on('click',function () {
+                        var OID=$(this).attr('data-id');
+                        window.open('personal.html?id='+OID+'')
+                    })
+                }
+            })
+        }
+
+
+
+    }
+    function rightpost(){
+        $.ajax({
+
+            url: '/searchAllgamesright',
+            success: function (res) {
+                $(res.data).each(function () {
+                    $('#right-botbox #right-bot-down').append(`
+                            <li class="right-post">
+                           <img src="${this.p_Path2}" alt="" data-id="${this.g_id}" title="${this.g_name}">
+                           <div>
+                               <h5>${this.g_name}</h5>
+                               <p title="${this.g_Introduction}">${this.g_Introduction}
+                               </p>
+                           </div>
+                       </li>
+                     `);
+                });
+                $('#right-botbox #right-bot-down img').on('click',function () {
+                    var OID=$(this).attr('data-id');
+                    window.open('products.html?id='+OID+'')
+                })
+            }
+        })
+    }
+    login();
+    rightid();
+    rightpost();
+    first();
+    $('#left-result-search-for li').on('click',function () {
+        $('#left-result-search-for li').removeClass('active');
+        this.className='active';
+    });
+    $('#utie').on('click',function () {
+      first()
+    });
+    $('#dianping').on('click',function () {
+      second()
+    });
+    $('#uyou').on('click',function () {
+      third()
+    });
+    $('#groupteam').on('click',function () {
+      fourth()
+    })
+
+
+</script>
+</html>

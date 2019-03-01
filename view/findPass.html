@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/findPass.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/gVerify.js"></script>
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+<%-include nav.html%>
+<div id="findpass-body">
+    <div id="findpass-box">
+         <div id="findpass-top">
+             <h3>找回密码</h3>
+         </div>
+          <div id="findpass-bottom">
+               <div id="findpass-bot-box">
+                     <div class="findpass-email">
+                         <label for="">邮箱</label>
+                         <input type="text" placeholder="请输入邮箱" id="findpass-email-input">
+                     </div>
+                     <div class="findpass-test">
+                         <label for="">图片验证码</label>
+                         <input type="text" placeholder="请输入右边验证码" id="findpass-email-test">
+                         <div id="v_container" style=" " ></div>
+                     </div>
+                     <div class="findpass-getemail">
+                         <label for="">验证码</label>
+                         <input type="text" placeholder="请输入邮箱收到的验证码" id="findpass-email-get">
+                         <button class="get-email-test">获取邮箱验证码</button>
+                     </div>
+                     <div class="new-pass">
+                         <label for="">新密码</label>
+                         <input type="text" placeholder="请输入新密码" id="findpass-newpass">
+                     </div>
+                   <div class="new-pass-ok">
+                       <label for="">确认密码</label>
+                       <input type="text" placeholder="请再次填写密码" id="findpass-newpass-ok">
+                   </div>
+                   <div class="SK-button-com submit-btn">
+                       <button class="redButton" id="my_button">确认</button>
+                   </div>
+                     </div>
+               </div>
+          </div>
+    </div>
+</div>
+<%-include bottom.html%>
+</body>
+<script>
+    var verifyCode = new GVerify("v_container");
+
+    document.getElementById("my_button").onclick = function(){
+        var res = verifyCode.validate(document.getElementById("code_input").value);
+        if(res){
+            console.log("验证正确");
+        }else{
+            alert("验证码错误");
+        }
+    }
+</script>
+</html>

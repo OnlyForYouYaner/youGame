@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_uyhr0yapnbb/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/personal.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+
+<%-include nav.html%>
+<div class="y-subject">
+    <div class="y-batten">
+        <!--<div class="y-img">-->
+            <!--<img src="http://localhost:8081/images/personal/default.jpg" alt="">-->
+        <!--</div>-->
+        <!--<div class="y-introduce">-->
+            <!--<h2>取个名字真难</h2>-->
+            <!--<p>个人签名:</p>-->
+            <!--<p>游戏数:</p>-->
+        <!--</div>-->
+    </div>
+    <div class="y-boyd">
+        <div class="y-choice">
+            <ul>
+                <li class="active y-child l1">游戏</li>
+                <li class="l2">小组</li>
+                <li class="l3">收藏</li>
+                <li class="l4">U帖</li>
+                <li class="l5">点评</li>
+                <li class="l6">评论</li>
+            </ul>
+            <p></p>
+            <ol>
+                <li class="active y-child"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="y-middle ">
+           <!--游戏-->
+            <div class="y-game active">
+                <!--没有数据-->
+                <div class="y-nogame">
+                    <p>你还没有游戏哟～～</p>
+                </div>
+                <!--有数据-->
+                <!--<div class="y-yesgame">-->
+                    <!--<div class="y-img">-->
+                        <!--<div>-->
+                            <!--<img src="http://localhost:8081/images/personal/2.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<h4>YouGame综合讨论组</h4>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="y-details">-->
+                        <!--<div>-->
+                            <!--<span>去往小组</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--小组-->
+            <div class="y-group">
+                <!--没有数据-->
+                <!--<div class="y-nogroup" >-->
+                    <!--<p>请去U帖留下你的足迹～～</p>-->
+                    <!--<button>前往U圈</button>-->
+                <!--</div>-->
+                <!--有数据的-->
+                <!--<div class="y-yesgroup">-->
+                    <!--<div class="y-img">-->
+                        <!--<div>-->
+                            <!--<img src="http://localhost:8081/images/personal/2.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<h4>YouGame综合讨论组</h4>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="y-details">-->
+                        <!--<div>-->
+                            <!--<span>345713</span>-->
+                            <!--<p>成员</p>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<span>3413</span>-->
+                            <!--<p>主题</p>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<button>去往小组</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--收藏-->
+            <div class="y-collection">
+                <!--没有数据-->
+                <div class="y-nocollection">
+                    <p>请去U帖留下你的足迹～～</p>
+                    <button>前往U圈</button>
+                </div>
+                <!--有数据的-->
+                <!--<div class="y-yescollection">-->
+                    <!--<div class="y-img">-->
+                        <!--<div>-->
+                            <!--<img src="http://localhost:8081/images/personal/3.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<h4>gtx960m，4g，笔记本能玩吗？</h4>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="y-details">-->
+                        <!--<div>-->
+                            <!--<img src="http://localhost:8081/images/personal/4.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<p>2018-09-11发布于<span>黑暗之魂3</span></p>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<button>取消收藏</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="y-yescollection">-->
+                    <!--<div class="y-img">-->
+                        <!--<div>-->
+                            <!--<img src="http://localhost:8081/images/personal/3.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<h4>gtx960m，4g，笔记本能玩吗？</h4>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="y-details">-->
+                        <!--<div>-->
+                            <!--<img src="http://localhost:8081/images/personal/4.jpg" alt="">-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<p>2018-09-11发布于<span>黑暗之魂3</span></p>-->
+                        <!--</div>-->
+                        <!--<div>-->
+                            <!--<button>取消收藏</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--U帖-->
+            <div class="y-post">
+                <div class="y-screen">
+                    <label>筛选</label>
+                    <select>
+                        <option>按时间排序</option>
+                        <option>按评论数排序</option>
+                        <option>按点赞数排序</option>
+                    </select>
+                </div>
+            <div class="screen">
+
+            </div>
+                <!--<div class="y-content">-->
+                    <!--<h4>托儿所</h4>-->
+                    <!--<p>我命由我不由天......</p>-->
+                    <!--<div class="y-personal">-->
+                        <!--<img src="http://localhost:8081/images/personal/default.jpg" alt="">-->
+                        <!--<span>取个名字真难</span>-->
+                        <!--<span>2018-09-17 19:06:53发布</span>-->
+                        <!--<span class="y-reply">回复&nbsp;&nbsp;0</span>-->
+                        <!--<span class="y-give">-->
+                                <!--<i class="icon iconfont icon-dianzan">&nbsp;&nbsp;0</i>-->
+                        <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            </div>
+            <!--点评-->
+            <div class="y-comment">
+                <div class="y-screen">
+                    <label>筛选</label>
+                    <select>
+                        <option>YouGame评分</option>
+                        <option>steam评测</option>
+                    </select>
+                </div>
+                <div class="comment"></div>
+                <!--<div y-nocomment>-->
+                    <!--<p>请去U帖留下你的足迹～～</p>-->
+                    <!--<button>前往U圈</button>-->
+                <!--</div>-->
+                <!--<div class="y-yescomment">-->
+                    <!--<div class="y-content">-->
+                    <!--<h4>托儿所</h4>-->
+                    <!--<p>我命由我不由天......</p>-->
+                    <!--<div class="y-personal">-->
+                    <!--<img src="http://localhost:8081/images/personal/default.jpg" alt="">-->
+                    <!--<span>取个名字真难</span>-->
+                    <!--<span>2018-09-17 19:06:53发布</span>-->
+                    <!--<span class="y-reply">踩一踩&nbsp;&nbsp;0</span>-->
+                    <!--<span class="y-give">-->
+                    <!--<i class="icon iconfont icon-dianzan">&nbsp;&nbsp;0</i>-->
+                    <!--</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--评论-->
+            <div class="y-discuss">
+                <div class="y-btn">
+                    <div class="y-div1">
+                        <p class="active">评论</p>
+                    </div>
+                    <div class="y-div2">
+                        <p>回复</p>
+                    </div>
+                </div>
+                <div class="y-btn-div">
+                    <!--<div class="active y-div">-->
+                        <!--<div class="y-nodiscuss">-->
+                            <!--<p class="p1">请去U帖留下你的足迹～～</p>-->
+                            <!--<button>d前往U圈</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="y-yesdiscuss">-->
+                            <!--<div class="y-content">-->
+                                <!--<h4>托儿所</h4>-->
+                                <!--<div class="y-personal">-->
+                                    <!--<span>“我命由我不由天......”</span>-->
+                                    <!--<span class="y-day">2018-09-17 19:06:53发布</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--<div class="y-yesdiscuss">-->
+                        <!--<div class="y-content">-->
+                            <!--<h4>回复：托儿所</h4>-->
+                            <!--<div class="y-personal">-->
+                                <!--<span>“我命由我不由天......”</span>-->
+                                <!--<span class="y-day">2018-09-17 19:06:53发布</span>-->
+                                <!--<p>马超那件数据</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+                    <!--<div class="y-div2">-->
+                        <!--<p class="p1">请去U帖留下你的足迹～～</p>-->
+                        <!--<button>前往U圈</button>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%-include bottom.html%>
+</body>
+<script src="http://localhost:8081/js/personal/personal.js"></script>
+</html>

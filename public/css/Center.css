@@ -1,0 +1,502 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+#all {
+  width: 100%;
+  background: #202438;
+}
+#row2 {
+  width: 1200px;
+  height: 150px;
+  background: #202438;
+}
+#body_center {
+  width: 1200px;
+  background: #202438;
+  margin: 0 auto;
+}
+#box1 {
+  width: 200px;
+  height: 460px;
+  border-radius: 5px ;
+  background: #32384c;
+}
+#box2 {
+  height: 160px;
+  background: #32384c;
+}
+#box3 {
+  margin-top: 26px;
+  background: #32384c;
+  min-height: 450px;
+}
+.bt {
+  width: 160px;
+  height: 60px;
+  color: #A8BAEC;
+  font-size: 18px ;
+  margin-left: 20px;
+  line-height: 60px;
+  border-bottom: 1px solid;
+}
+#box1 ul li {
+  width: 200px;
+  height: 50px;
+  font-size: 16px ;
+  line-height: 50px;
+  color: #677998;
+  text-align: center;
+}
+#first img {
+  width: 130px;
+  height: 130px;
+  border-radius: 130px;
+  vertical-align: middle;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+}
+#first p {
+  font-size: 23px;
+  color: #A8BAEC;
+  line-height: 70px;
+  text-align: left;
+}
+#sf {
+  width: 50px;
+  height: 30px;
+  background: #3e465c;
+  padding: 5px;
+  border-radius: 5px;
+  color: #A8BAEC;
+  font-size: 14px;
+}
+#first a {
+  color: #A8BAEC;
+  margin-left: 5px;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+.tab-content {
+  margin-bottom: 150px;
+}
+#xg {
+  color: #677998;
+  line-height: 70px;
+  position: absolute;
+  top: 15px;
+  left: 635px;
+  cursor: pointer;
+}
+#box3 p {
+  text-align: center;
+  line-height: 50px;
+  color: #A8BAEC;
+  font-size: 16px;
+}
+#box3 span {
+  color: #677998;
+  line-height: 70px;
+  position: absolute;
+  top: 200px;
+  left: 635px;
+}
+#box3 #xy {
+  line-height: 250px;
+  text-align: center;
+  color: #A8BAEC;
+}
+#box1 a {
+  text-decoration: none;
+}
+#li1 {
+  display: none;
+}
+#option1 .none {
+  line-height: 250px;
+  text-align: center;
+  color: #A8BAEC;
+}
+#option2 p {
+  line-height: 250px;
+  text-align: center;
+  color: #A8BAEC;
+}
+#Order {
+  padding: 10px 0 30px 0;
+  min-height: 450px;
+  background: #32384c;
+  border-radius: 5px;
+}
+#Order ul li {
+  text-align: center;
+  width: 241.25px;
+}
+#Comment ul li {
+  text-align: center;
+  width: 50%;
+}
+#Comment ul h4 {
+  text-align: center;
+  font-size: 25px;
+  color: #A8BAEC;
+}
+#Comment {
+  text-align: center;
+  padding: 10px 0 30px 0;
+  min-height: 450px;
+  background: #32384c;
+  border-radius: 5px;
+}
+#Game_top {
+  text-align: left;
+  background: #32384c;
+  border-radius: 5px;
+  min-height: 50px;
+}
+#Game_body {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0 30px 0;
+  min-height: 400px;
+  background: #32384c;
+  line-height: 50px;
+  border-radius: 5px;
+}
+#Game_body p {
+  line-height: 250px;
+  text-align: center;
+  color: #A8BAEC;
+}
+#information {
+  min-height: 450px;
+  background: #32384c;
+  border-radius: 5px;
+  line-height: 50px;
+}
+#information img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+}
+#information h4 {
+  text-align: left;
+  font-size: 10px;
+  color: #7a80a2;
+}
+#box5 {
+  height: 20px;
+}
+#box6 {
+  height: 20px;
+}
+#photo {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+#Safety {
+  min-height: 450px;
+  background: #32384c;
+  border-radius: 5px;
+  line-height: 50px;
+}
+#xk .tab-pane #Safety h4 {
+  color: #A8BAEC;
+  font-size: 26px;
+}
+#Safety .table td {
+  font-size: 15px;
+  color: #5986b9;
+}
+#Safety .table th {
+  font-size: 18px;
+  color: #A8BAEC;
+}
+#option4 .row {
+  color: #A8BAEC;
+}
+#Address {
+  min-height: 450px;
+  background: #32384c;
+  border-radius: 5px;
+  padding: 20px 0 50px 0;
+}
+#xk .tab-pane #Address h4 {
+  color: #A8BAEC;
+  font-size: 26px;
+}
+#Address .table td {
+  font-size: 15px;
+  color: #5986b9;
+}
+#Address .table th {
+  font-size: 18px;
+  color: #A8BAEC;
+}
+#Address .table {
+  background: #202539;
+  border-radius: 5px;
+}
+#Address .info-mar {
+  margin-top: 20px;
+}
+#xk {
+  margin-left: -20px;
+}
+.info {
+  width: 100%;
+  height: 200px;
+  border: 1px dashed;
+  background: #202539;
+  color: #A8BAEC;
+}
+.info_right a {
+  color: #5986b9;
+  float: right;
+  margin-right: 5px;
+}
+.info_right a:hover {
+  color: #5986b9;
+  text-decoration: none;
+}
+#address p {
+  line-height: 0px;
+  margin: 0px;
+  padding: 0;
+}
+#option6 a {
+  text-decoration: none;
+}
+.form-group div {
+  float: left;
+}
+.form-control {
+  display: block !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus {
+  background: #202539;
+  color: #A8BAEC;
+  border-radius: 4px 4px 0 0;
+  border: 0px solid;
+}
+#all > .row > #aul > #box1 > .nav-tabs > li.active > a {
+  background-color: #202539;
+  border-radius: 0px;
+  border: 0px solid;
+}
+.nav-tabs > li > a {
+  margin-right: 0px;
+}
+#btn1 {
+  margin-left: -15px;
+}
+#btn1 a {
+  text-decoration: none;
+  color: #A8BAEC;
+}
+.dagai {
+  background-color: #202539;
+  border: 0px solid;
+  margin-top: 10px;
+  color: #A8BAEC;
+}
+.btn-default1 {
+  background-color: #202539;
+  border: 0px solid;
+  color: #a7a5a5;
+}
+.nyr {
+  line-height: 50px;
+  margin-top: 10px;
+}
+a {
+  color: #7a80a2;
+}
+.dropdown-menu1 {
+  background-color: #202539;
+  border: 0px solid;
+  color: #a7a5a5;
+}
+.dropdown-menu1 > li > a {
+  color: #a7a5a5;
+}
+.modal-content {
+  background: #32384c;
+  border: 0px solid;
+  color: #a7a5a5;
+}
+#mygame h4 {
+  margin-left: 300px;
+  color: #A8BAEC;
+  font-size: 26px;
+}
+.dingdan {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100px;
+}
+.dingdan th {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+}
+.dingdan > tbody > tr > td {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100px;
+  vertical-align: middle;
+}
+.dingdan > tbody > tr > th {
+  border-top: 0px solid;
+}
+.dingdan > tr > .last {
+  color: #A8BAEC;
+  text-align: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.dingdan .btn {
+  font-size: 12px;
+}
+.dingdan tr td p {
+  margin: 0px;
+  color: #ef5d00;
+}
+.dingdan img {
+  height: 80px ;
+  width: 135px;
+}
+.dingdan a {
+  cursor: pointer;
+}
+.dingdan tr {
+  cursor: pointer;
+}
+.tab-body:hover {
+  background-color: #202539;
+}
+.xinyuan tr .pirce {
+  font-size: 16px;
+  color: #ef5d00;
+}
+.xinyuan {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100px;
+}
+.xinyuan th {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+}
+.xinyuan > tbody > tr > td {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100px;
+  vertical-align: middle;
+}
+.xinyuan > tbody > tr > th {
+  border-top: 0px solid;
+}
+.xinyuan > tbody > tr > .last {
+  color: #A8BAEC;
+  text-align: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.xinyuan .btn {
+  font-size: 12px;
+}
+.xinyuan tr td p {
+  margin: 0px;
+  color: #ef5d00;
+}
+.xinyuan a {
+  cursor: pointer;
+}
+.xinyuan img {
+  height: 80px ;
+  width: 135px;
+}
+.xinyuan tr {
+  cursor: pointer;
+}
+.myGames tr .pirce {
+  font-size: 16px;
+  color: #ef5d00;
+}
+.myGames {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100px;
+}
+.myGames tr {
+  cursor: pointer;
+}
+.myGames th {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+}
+.myGames > tbody > tr > td {
+  color: #A8BAEC;
+  text-align: center;
+  font-size: 12px;
+  line-height: 100px;
+  vertical-align: middle;
+}
+.myGames > tbody > tr > th {
+  border-top: 0px solid;
+}
+.myGames > tbody > tr > .last {
+  color: #A8BAEC;
+  text-align: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.myGames .btn {
+  font-size: 12px;
+}
+.myGames img {
+  height: 80px ;
+  width: 135px;
+}
+#save {
+  text-align: center;
+  margin: 0 auto;
+  margin-left: 100px;
+}
+.beath {
+  width: 95%;
+}
+.elastic {
+  margin-top: 200px;
+}
+.delete {
+  color: #A8BAEC;
+  font-size: 16px;
+}
+.tishi {
+  color: red;
+  display: none;
+}
+.form-control {
+  background-color: #202539;
+  border: 0px solid;
+  color: #A8BAEC;
+}
+.tishi2 {
+  color: red;
+  display: none;
+}
+/*# sourceMappingURL=Center.css.map */

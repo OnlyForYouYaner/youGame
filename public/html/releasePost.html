@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>releasePost</title>
+    <script src="../js/wangEditor.js"></script>
+    <link rel="stylesheet" href="../css/releasePost.css">
+</head>
+<body>
+<div class="releasePost-box">
+    <div class="top-box">
+        <h3>标题</h3>
+        <input type="text" placeholder="文章标题" value="">
+        <p>您还可以输入xx字</p>
+    </div>
+    <div id="editor">
+        <div id="div1" class="toolbar">
+        </div>
+        <div style="padding: 5px 0; background: #33394d"></div>
+        <div id="div2" class="text"> <!--可使用 min-height 实现编辑区域自动增加高度-->
+            <p></p>
+        </div>
+    </div>
+    <div class="bottom-box">
+        <button class="left">保存</button>
+        <button class="right">发送</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var E = window.wangEditor;
+    var editor = new E('#div1', '#div2');
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create()
+</script>
+</html>

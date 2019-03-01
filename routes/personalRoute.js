@@ -1,0 +1,14 @@
+var express=require('express');
+var personalController=require('./../controller/personalController.js');
+var myRouter=express.Router();
+myRouter.route('/centerLnformation').get(personalController.centerLnformation);
+myRouter.route('/centerGame').get(personalController.centerGame);
+myRouter.route('/centerGroup').get(personalController.centerGroup);
+myRouter.route('/Total').get(personalController.Total);
+myRouter.route('/Posts').get(personalController.Posts);
+myRouter.route('/centerCollection').get(personalController.centerCollection);
+myRouter.route('/centerPost').get(personalController.centerPost);
+myRouter.route('/centerComment').get(personalController.centerComment);
+myRouter.route('/centerSelection').get(personalController.centerSelection);
+myRouter.route('/centerReply').get(personalController.centerReply);
+module.exports=myRouter;

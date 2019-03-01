@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+
+
+
+
+
+
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/dist/swiper.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/products.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/swiper.js"></script>
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+<%-include nav.html%>
+<div id="box" class="clearfix">
+    <div class="game-special-bg"></div>
+    <section class="clearfix new-content">
+        <h2 class="p-name"></h2>
+        <h4 class="p-en-name"></h4>
+        <section class="new-content-left">
+            <div class="game-introduction-material">
+                <div class="swiper-container" style="width:790px;height: 443px">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="" alt="" style="width:790px;height: 443px" class="swiper-slide-img1"></div>
+                        <div class="swiper-slide"><img src="images/games/Bullet/4.jpg" alt="" style="width:790px;height: 443px" class="swiper-slide-img2"></div>
+                        <div class="swiper-slide"><img src="images/games/Bullet/5.jpg" alt="" style="width:790px;height: 443px" class="swiper-slide-img3"></div>
+                        <div class="swiper-slide"><img src="images/games/Bullet/6.jpg" alt="" style="width:790px;height: 443px" class="swiper-slide-img4"></div>
+                        <div class="swiper-slide"><img src="images/games/Bullet/7.jpg" alt="" style="width:790px;height: 443px" class="swiper-slide-img5"></div>
+                    </div>
+                    <div class="swiper-button-prev swiper-button-white left"></div>
+                    <div class="swiper-button-next swiper-button-white right"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="game-introduction">
+                <h3 class="game-introduction-title">游戏介绍</h3>
+                <div class="game-introduction-content">
+                    <p>
+                        <!--豪华版包含《暗黑血统 III》、游戏原声带，以及 2 项将在《暗黑血统 III》推出后发布的付费 DLC。-->
+                    </p>
+                    <!--<p>砍杀动作冒险游戏《暗黑血统 III》的玩家将扮演“怒神”，重返灾变的人间界，展开猎杀“七宗罪”的任务。身为神秘四骑士之中最变化莫测怒神，这趟任务只许成功，不许失败，为目前饱受蹂躏的人间界带来各力量的平衡。广受好评的《暗黑血统》终于推出备受瞩目的第三章——《暗黑血统 III》。</p>-->
+                    <!--<ul>-->
+                    <!--<li>扮演法师“怒神”，运用她的鞭子与魔法，恢复人间界善恶平衡！</li>-->
+                    <!--<li>驾驭“怒神”的魔法，释放她的各种变身形体，每种形体都可赋予她新武器、招数与穿越能力。</li>-->
+                    <!--<li>探索永无止境、生生不息的自由游戏世界，让“怒神”来回穿越不同环境来解开谜题，同时推进故事的剧情进展。</li>-->
+                    <!--<li>击败“七宗罪”和他们的党羽，包括神秘怪物和变形生物。</li>-->
+                    <!--<li>令人叹为观止《暗黑血统》特有艺术风格：因战争破坏和大自然反扑而残破不堪的空荡灾变世界，将带领玩家将从天堂仙境落入地狱深渊。</li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+            <div class="game-system-request">
+                <ul class="game-system-tabs">
+                    <li class="active"><a href="javascript:;">windows</a></li>
+                </ul>
+                <div class="system-content">
+                    <div class="minimum-configuration">
+                        <p class="sys-header">最低配置</p>
+                        <table >
+                            <tr>
+                                <td class="lab">操作系统</td>
+                                <td class="txt" id="sys-sys"></td>
+                            </tr>
+                            <tr>
+                                <td class="lab">内存</td>
+                                <td class="txt" id="sys-mem"></td>
+                            </tr>
+                            <tr>
+                                <td class="lab">处理器</td>
+                                <td class="txt" id="sys-pro"></td>
+                            </tr>
+                            <tr>
+                                <td class="lab">DirectX 版本</td>
+                                <td class="txt" id="sys-dx"></td>
+                            </tr>
+                            <tr>
+                                <td class="lab">图形</td>
+                                <td class="txt" id="sys-ima"></td>
+                            </tr>
+                            <tr>
+                                <td class="lab">硬盘</td>
+                                <td class="txt" id="sys-dk"></td>
+                            </tr>
+                            <tr>
+                                <td class="lab">声卡</td>
+                                <td class="txt" id="sys-sc"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="new-content-right">
+            <div class="game-sale-block">
+                <p class="brief-info">砍杀动作冒险游戏《暗黑血统 III》的玩家将扮演“怒神”，重返灾变的人间界，展开猎杀“七宗罪”的任务。身为神秘四骑士之中最变化莫测怒神，这趟任务只许成功，不许失败，为目前饱受蹂躏的人间界带来各力量的平衡。广受好评的《暗黑血统》终于推出备受瞩目的第三章——《暗黑血统 III》。</p>
+                <ul class="tag-list clearfix">
+                    <!--<li>动作</li>-->
+                    <!--<li>角色扮演</li>-->
+                    <!--<li>冒险</li>-->
+                </ul>
+                <p class="sale-price">￥</p>
+                <div>
+                    <button class="add-cart btn" data-toggle="modal" data-target="#test1"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</button>
+                    <button class="btn purchase" id="btn-purchase">立即购买</button>
+                </div>
+                <div class="modal fade" id="test1" data-index="">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span>&times;</span>
+                                </button>
+                                <h4 class="modal-title"></h4>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn btn-primary yes4">确定</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="add-wish"><span class="glyphicon glyphicon-heart-empty"></span>加入心愿单</p>
+            </div>
+            <div class="evaluation-block">
+                <div class="score-block clearfix">
+                    <div class="left-block">
+                        <p class="score">9.5 <span class="stars">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </span></p>
+                        <span class="comment-sum">已有2人评价</span>
+                    </div>
+                    <div class="right-block">
+                        <p class="score-title">“特别好评”</p>
+                        <a href="" class="go-to-group">去往小组</a>
+                    </div>
+                </div>
+            </div>
+            <div class="game-usual-info">
+                <div class="publish-name">
+                    <div class="usual-info-label">开发商</div>
+                    <a href="" class="usual-info-content publish-name-dev">Gunfire Games</a>
+                </div>
+                <div class="publish-name">
+                    <div class="usual-info-label">发行商</div>
+                    <a href="" class="usual-info-content publish-name-pub">THQ Nordic</a>
+                </div>
+                <div class="publish-name">
+                    <div class="usual-info-label">
+                        发行日期
+                    </div>
+                    <span  class="usual-info-content publish-name-time">
+                            2018-11-27
+                        </span>
+                </div>
+                <div class="publish-name publish-name-lag">
+                    <div class="usual-info-label">
+                        游戏语言
+                    </div>
+                    <!--<a href="" class="usual-info-content ">-->
+                    <!--英文-->
+                    <!--</a>-->
+                    <!--<a href="" class="usual-info-content">-->
+                    <!--简体中文-->
+                    <!--</a>-->
+                </div>
+                <div class="publish-name">
+                    <div class="usual-info-label">
+                        下载方式
+                    </div>
+                    <a href="" class="usual-info-content">
+                        第三方平台
+                    </a>
+                </div>
+                <div class="publish-name publish-name-os">
+                    <div class="usual-info-label">
+                        支持系统
+                    </div>
+                    <!--<a href="" class="usual-info-content">-->
+                    <!--Win-->
+                    <!--</a>-->
+                </div>
+            </div>
+            <div class="game-copyright">
+                <h3>版权信息</h3>
+                <p>© 2017 THQ Nordic AB, Sweden. Developed by Gunfire Games. Darksiders, THQ and their respective logos are trademarks and/or registered trademarks of THQ Nordic AB. All rights reserved. All other trademarks, logos and copyrights are property of their respective owners.</p>
+            </div>
+        </section>
+        <section class="player-evaluation">
+
+            <div class="player-evaluation-left">
+                <div >
+                    <div class="div2 clearfix">
+                        <h3>评价</h3>
+                        <textarea name="text"  ></textarea>
+                        <div class="fen">
+                            <span>游戏评分：</span>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <button id="release">发表评论</button>
+                    </div>
+                </div>
+                <h3>玩家热门评价</h3>
+                <!--<div class="list-item">-->
+                <!--<div class="leftCol">-->
+                <!--<a href="" class="user-head"><img src="https://media.st.dl.bscstorage.net/steamcommunity/public/images/avatars/61/614c9dc1af2e8dd9e3df39320d5efa51f4e013a3.jpg" alt=""></a>-->
+                <!--<div>-->
+                <!--<a href="" class="user-name">JOJO</a>-->
+                <!--<p  class="num-games">帐户内拥有2款游戏</p>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="rightCol">-->
+                <!--<p class="rightCol-score">9.5 <span class="rightCol-stars">-->
+                <!--<span class="glyphicon glyphicon-star"></span>-->
+                <!--<span class="glyphicon glyphicon-star"></span>-->
+                <!--<span class="glyphicon glyphicon-star"></span>-->
+                <!--<span class="glyphicon glyphicon-star"></span>-->
+                <!--<span class="glyphicon glyphicon-star"></span>-->
+                <!--</span></p>-->
+                <!--<p class="rightCol-time">发布于2018-03-12</p>-->
+                <!--<p class="rightCol-content">玩完以后我就一个成语，《无能狂怒》</p>-->
+                <!--<div>-->
+                <!--<button class="btn thumbs-up"><span class="glyphicon glyphicon-thumbs-up"></span>6</button>-->
+                <!--<button class="btn user-reply"><span class="glyphicon glyphicon-thumbs-down"></span>4</button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+            </div>
+            <div class="player-evaluation-right">
+                <h3>最新评价</h3>
+                <!--<div class="latest-reply">-->
+                <!--<div class="clearfix">-->
+                <!--<p class="latest-reply-score">8</p>-->
+                <!--<a href="" class="latest-reply-name">DIO</a>-->
+                <!--</div>-->
+                <!--<p class="latest-reply-time">发布于2018-11-12</p>-->
+                <!--<p class="latest-reply-content">是我DIO哒</p>-->
+                <!--<div class="latest-reply-op">-->
+                <!--<button class="btn thumbs-up"><span class="glyphicon glyphicon-thumbs-up"></span>0</button>-->
+                <!--<button class="btn user-reply"><span class="glyphicon glyphicon-thumbs-down"></span>4</button>-->
+                <!--</div>-->
+                <!--</div>-->
+
+            </div>
+        </section>
+    </section>
+</div>
+<%-include bottom.html%>
+<input type="i">
+</body>
+<script src="http://localhost:8081/js/products.js"></script>
+
+</html>

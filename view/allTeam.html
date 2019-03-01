@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allTeam</title>
+
+    <link rel="stylesheet" href="http://localhost:8081/font/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+
+    <link rel="stylesheet" href="http://localhost:8081/css/allTeam.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+<%-include nav.html%>
+    <div class="allTeam-box">
+        <div class="left-box">
+            <div class="allTeam-search">
+                <input type="text" value="" placeholder=" 请输入你想搜索的" id="allTeam-search">
+                <i class="fa fa-search" id="search"></i>
+            </div>
+            <div class="left-list">
+                <ul>
+                    <li class="list active" id="list0">我的小组</li>
+                    <li class="list" id="list1">官方小组</li>
+                    <li class="list" id="list2">新游上线</li>
+                    <li class="list" id="list3">动作冒险</li>
+                    <li class="list" id="list4">角色扮演</li>
+                    <li class="list" id="list5">射击竞技</li>
+                    <li class="list" id="list6">策略模拟</li>
+                    <li class="list" id="list7">体育竞速</li>
+                    <li class="list" id="list8">其他</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-box">
+            <!--<div class="right-title">-->
+                <!--<div class="right-top1">我的小组</div>-->
+                <!--<p class="right-top2">共加入了xx个小组</p>-->
+            <!--</div>-->
+            <!--<div class="right-bottom">-->
+                <!--<img src="../images/allTeam/yougame.png" class="teamImg"/>-->
+                <!--<a>-->
+                    <!--<h1 class="h1title">YouGame 综合讨论组</h1>-->
+                    <!--<p>-->
+                        <!--<i class="fa fa-user"></i>成员：<span class="member">150</span>-->
+                        <!--<i class="fa fa-file-text"></i>U帖：<span class="postNumber">154</span>-->
+                    <!--</p>-->
+                <!--</a>-->
+                <!--<button class="btn-team">关注</button>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+
+<%-include bottom.html%>
+
+</body>
+<script>
+    var uid=$('#top-nav-login-ing').attr('data-id');
+    if(uid==undefined){
+        uid=1;
+    }
+    function myTeam(){
+        $.ajax({
+            url:'/myTeam',
+            data:{
+                user_id:uid,
+            },
+            success:function (res) {
+                // console.log(res)
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">我的小组</div>\n' +
+                    '               <p class="right-top2">共加入了'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    });
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+
+            }
+        })
+    }
+    myTeam();
+    function search(){
+        var str=$('#allTeam-search').val();
+        if(str.length==0){
+            return
+        }
+        $.ajax({
+            url:'/allTeamsearch',
+            data:{
+                text:str
+            },
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">“'+str+'”在小组中的搜索结果</div>\n' +
+                    '               <p class="right-top2">共找到了'+res.length+'个小组</p> \n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    });
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+                if (res.length==0) {
+                    $('.right-box').append('<div class="no-search-result">没有找到结果，建议修改搜索关键词再尝试</div>')
+                }
+                $('#allTeam-search').val('');
+            }
+        })
+    };
+    $('#search').click(function () {
+
+        search();
+
+    });
+    $('#list0').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        // var name=$(this).html();
+        myTeam();
+
+    });
+    $('#list1').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        $.ajax({
+            url:'/officialTeam',
+            success:function (res) {
+
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p> \n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    })
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+
+
+
+
+            }
+        })
+
+    });
+    $('#list2').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        $.ajax({
+            url:'/newGameOnline',
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    })
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+
+
+            }
+        })
+
+    });
+    $('#list3').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        $.ajax({
+            url:'/actionAdventure',
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    });
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+
+
+            }
+        })
+
+    });
+    $('#list4').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        $.ajax({
+            url:'/rolePlay',
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    })
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+            }
+        })
+
+    });
+    $('#list5').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        // console.log($(this).index());
+        $.ajax({
+            url:'/shootingSports',
+            success:function (res) {
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    })
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+            }
+        })
+
+    });
+    $('#list6').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        // console.log($(this).index());
+        $.ajax({
+            url:'/strategySimulation',
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    });
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                }
+
+
+            }
+        })
+
+    });
+    $('#list7').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        // console.log($(this).index());
+        $.ajax({
+            url:'/sportRacing',
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        // console.log(1)
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    });
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                }
+            }
+        })
+
+    });
+    $('#list8').click(function () {
+        $('.list').removeClass('active');
+        $(this).addClass('active');
+        // console.log($(this).index());
+        $.ajax({
+            url:'/other',
+            success:function (res) {
+                // console.log(res);
+                $('.right-box').html('');
+                $('.right-box').append('<div class="right-title">\n' +
+                    '                <div class="right-top1">'+res[0].a_type+'</div>\n' +
+                    '               <p class="right-top2">共有'+res.length+'个小组</p>\n' +
+                    '            </div>');
+                for (let i = 0; i < res.length; i++) {
+                    // console.log(res)
+
+                    if (res[i].Focus == 1) {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team1 btn0" data-focus="1">已关注</button>
+                                        </div> `);
+                    } else {
+                        $('.right-box').append(` <div class="right-bottom" data-index="${res[i].a_id}" >
+                                            <img src="${res[i].a_image}" class="teamImg"/>
+                                            <a class="${res[i].a_id}">
+                                                <h1 class="h1title">${res[i].a_name}</h1>
+                                                <p>
+                                                    <i class="fa fa-user"></i>成员：<span class="member" id="${res[i].a_id}"></span>
+                                                    <i class="fa fa-file-text"></i>U帖：<span class="postNumber"></span>
+                                                </p>
+                                            </a>
+                                            <button class="btn-team btn0" data-focus="0">关注</button>
+                                        </div> `);
+                    }
+                    var  postsNumber= new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/postsNumber',
+                            data: {
+                                groupID:res[i].a_id
+                            },
+                            success:function (res) {
+                                // console.log(res[0].postnum);
+
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+
+                    });
+                    var membership = new Promise(function(resolve, reject) {
+                        $.ajax({
+                            url:'/membership',
+                            data: {
+                                Name:res[i].a_name
+                            },
+                            success:function (res) {
+                                // console.log(res.length)
+                                resolve(res)
+                            },
+                            error:function (err) {
+                                reject(err)
+                            }
+                        });
+                    });
+
+                    Promise.all([postsNumber,membership]).then(function (arr) {
+                        // console.log(arr[0][0].postnum,arr[1].length);
+                        $('.postNumber').eq(i).html(arr[0][0].postnum);
+                        $('.member').eq(i).html(arr[1].length);
+                        // console.log($('.postNumber'))
+                    },function (err) {
+
+                    })
+
+
+
+                };
+            }
+        })
+
+    });
+    $('body').on('click','.btn0' ,function () {
+        var index=$(this).parent().attr('data-index');
+        var focus=parseInt($(this).attr('data-focus'));
+      // console.log(focus);
+      //   console.log(index)
+        $.ajax({
+            url:'/teamFocusedOn',
+
+            data:{
+                userID:uid,
+                index:index,
+                focus:focus
+            },
+            success:function(res){
+                if(!res.error){
+                    for(var i=0;i<$('.right-bottom').length;i++){
+                        var str=parseInt($('.right-bottom')[i].getAttribute('data-index'));
+                        if (str==index){
+                            // console.log(typeof focus);
+                            if (focus==0){
+                                $('.right-bottom').eq(i).find('button').removeClass('btn-team');
+                                $('.right-bottom').eq(i).find('button').addClass('btn-team1');
+                                $('.right-bottom').eq(i).find('button').html('已关注');
+                                $('.right-bottom').eq(i).find('button').attr('data-focus',1);
+                            } else{
+                                $('.right-bottom').eq(i).find('button').removeClass('btn-team1');
+                                $('.right-bottom').eq(i).find('button').addClass('btn-team');
+                                $('.right-bottom').eq(i).find('button').html('关注');
+                                $('.right-bottom').eq(i).find('button').attr('data-focus',0);
+                            }
+                        }//通过下标来删
+                    }
+                }
+            }
+
+        })
+    })
+    $('body').on('click','a' ,function () {
+        var a_id=$(this).attr('class');
+        window.open('officialDetails.html?id='+a_id+'','_self');
+    })
+
+</script>
+</html>

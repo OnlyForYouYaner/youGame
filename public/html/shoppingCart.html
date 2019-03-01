@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/shoppingCart.css">
+    <script src="../../public/js/roundJS/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+    <div id="shopBox">
+        <!---购物车标题---->
+        <div class="s_shop"><span>购物车</span></div>
+        <div class="s_navigation">
+        <button class="active">游戏</button>
+        <button>周边</button>
+    </div>
+        <!---购物车游戏内容---->
+        <section class="activ">
+        <div class="s-operation">
+            <input type="checkbox">
+            <span class="s_future">全选</span>
+            <span class="s_game">游戏</span>
+            <span class="s_type">商品类型</span>
+            <span class="s_price">商品价格</span>
+            <span class="s_oper">操作</span>
+        </div>
+        <div class="goods">
+            <div>
+                <input type="checkbox" class="s_choose">
+                <a href="#">
+                    <img src="../../public/images/shopImage/g-1.jpg" alt="">
+                </a>
+                <a href="#" class="s_gameName">苍翼默示录：交叉组队战 数字豪华版</a>
+                <span class="s-ordinary">普通游戏</span>
+                <span class="s-money">￥428.00</span>
+                <div class="s-wish">
+                    <a href="#">删除</a><br>
+                    <a href="#">加入心愿单</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="s-settlement">
+            <div class="s-all">
+            <div class="s-total">
+            <span class="s-game">共<i>0</i>款游戏</span>
+            <span class="s-pir">总价<i>￥0.00</i></span>
+            <button class="s-submit">提交</button>
+            </div>
+            </div>
+        </div>
+    </section>
+
+        <!---购物车周边内容---->
+        <section>
+        <div class="s-operation">
+            <input type="checkbox">
+            <span class="s_future">全选</span>
+            <span class="s_game">周边</span>
+            <span class="s_state">状态</span>
+            <span class="s_number">数量</span>
+            <span class="s_oper">价格</span>
+            <span class="s_oper">操作</span>
+        </div>
+
+        <div class="goods">
+            <div>
+                <input type="checkbox" class="s_choose">
+                <a href="#">
+                    <img src="../../public/images/roundImage/1.png" alt="">
+                </a>
+                <a href="#" class="s_gameName">怪物猎人 超软可爱布偶 搔鸟</a>
+                <span class="s-stock">有货</span>
+                <div class="s-shopNumber">
+                    <a href="#">-</a>
+                    <input type="text" value="1">
+                    <a href="#">+</a>
+                </div>
+                <span class="s-mon">￥129.00</span>
+                <div class="s-del">
+                    <a href="#">删除</a><br>
+                    <a href="#">加入心愿单</a>
+                </div>
+            </div>
+        </div>
+        <div class="s-settlement">
+            <div class="s-all">
+                <nav class="s-total">
+                <span class="s-game">共<i>0</i>款游戏</span>
+                <span class="s-pir">总价<i>￥0.00</i></span>
+                <button class="s-submit">提交</button>
+                </nav>
+            </div>
+        </div>
+    </section>
+    </div>
+
+</body>
+<script>
+    $('button').click(function () {
+        $('button').removeClass('active');
+        $('section').removeClass('activ');
+        $(this).addClass('active');
+        $('section:eq('+$(this).index()+')').addClass('activ');
+    })
+
+</script>
+</html>

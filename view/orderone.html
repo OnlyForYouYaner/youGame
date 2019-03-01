@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+</head>
+
+<link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+<link rel="stylesheet" href="http://localhost:8081/css/orderone.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+<link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+<script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+<script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<body>
+<%-include nav.html%>
+<section>
+    <div class="title title-one">收货信息</div>
+    <div class="address clearfix">
+        <div class="address_one">
+            <div class="address-name">好嗨哦</div>
+            <p class="address-ph">135********</p>
+            <p class="address-address">四川省成都市</p>
+            <p class="address-post">61022</p>
+        </div>
+        <!--<div class="address_two">-->
+            <!--<div>+</div>-->
+            <!--<p>添加新增地址</p>-->
+        <!--</div>-->
+
+    </div>
+    <div class="title">配送方式</div>
+    <div class="mode">
+        <div class="mode-name">厂商直发</div>
+    </div>
+    <div class="title">确认订单信息</div>
+    <div class="th">
+        <div class="one"><p>商品信息</p></div>
+        <div class="two">商品单价</div>
+        <div class="three">商品数量</div>
+    </div>
+    <div class="th ths">
+        <div class="th-box"></div>
+
+    </div>
+
+    <div class=" th th-last">
+        <div class="money">实付金额：<span >￥<span class="o"></span>.00</span></div>
+    </div>
+    <a href="javascript:;"><button class="btn-submit">提交订单</button></a>
+</section>
+
+<%-include bottom.html%>
+</body>
+<script src="http://localhost:8081/js/roundJS/orderone.js"></script>
+</html>

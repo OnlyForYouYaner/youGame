@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li button {
+  outline: none;
+}
+body {
+  background: #202539;
+}
+#roundBox {
+  width: 1200px;
+  background: #202539;
+  position: relative;
+  margin: 150px auto 200px auto;
+}
+#roundBox .r-title {
+  position: relative;
+}
+#roundBox .r-title input {
+  font-size: 18px;
+  border: none;
+  margin-left: 10px;
+  width: 76px;
+  height: 60px;
+  color: #B9C0EF;
+  background: #202539;
+  outline: none;
+}
+#roundBox .r-title .active {
+  color: #ff6900;
+  border: none;
+  border-bottom: 2px solid #ff6900;
+}
+section {
+  background: #202539;
+  display: none;
+}
+.activ {
+  display: block;
+}
+i {
+  font-size: 8px;
+  color: #33394d;
+  margin-left: 3px;
+}
+.r_word {
+  width: 1200px;
+  margin-bottom: 30px;
+}
+.r_word .r_head {
+  color: #B9C0EF;
+}
+.r_word .person {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.r_word .more {
+  color: #7a80a2;
+  float: right;
+  margin-right: 10px;
+  font-size: 12px;
+  margin-top: -30px;
+  text-decoration: none;
+}
+.r_word .r_image {
+  width: 1200px;
+  position: relative;
+}
+.r_word .r_image .r_img > img {
+  width: 228px;
+  height: 322px;
+}
+.r_word .r_image li {
+  width: 230px;
+  height: 324px;
+  margin-left: 8px;
+  float: left;
+  position: relative;
+  background: #282D41;
+  border: 2px solid rgba(76, 76, 76, 0.65);
+}
+.r_word .r_image li button {
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 60px;
+  line-height: 40px;
+  position: absolute;
+  left: 57px;
+  top: 230px;
+  border: none;
+  padding: 3px 10px;
+  background: #ff6900;
+  color: #ffffff;
+  cursor: pointer;
+}
+.r_word .r_image li .r_product {
+  width: 236px;
+  height: 328px;
+  text-align: center;
+  padding-top: 40px;
+  margin-left: 15px;
+  text-decoration: none;
+}
+.r_word .r_image li .photo {
+  width: 175px;
+  height: 147px;
+  margin: 30px auto;
+}
+.r_word .r_image li p {
+  font-size: 18px;
+  color: #FF6900;
+}
+.r_word .r_image li p span {
+  font-size: 12px;
+  color: #FF6900;
+}
+.r_word .r_image li .title {
+  font-size: 16px;
+  width: 188px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 30px auto 10px auto;
+  color: #B9C0EF;
+}
+.r_recommend {
+  font-size: 14px;
+  color: #7A80A2;
+  margin-bottom: 50px;
+}
+.r_recommend .r_brand {
+  width: 1100px;
+  margin-top: 54px;
+  margin-left: 20px;
+  border-bottom: 1px solid #33394D;
+}
+.r_recommend .r_brand a {
+  font-size: 14px;
+  color: #7A80A2;
+  margin-left: 40px;
+  padding: 4px;
+  text-decoration: none;
+}
+.r_recommend .r_brand .a-active {
+  color: #ff6900;
+  font-weight: bold;
+  border: 1px solid #ff6900;
+}
+.r_recommend .r_brand .capcom {
+  margin-left: 46px;
+}
+.r_recommend .r_game {
+  width: 1100px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-bottom: 1px solid #33394D;
+}
+.r_recommend .r_game a {
+  font-size: 14px;
+  color: #7A80A2;
+  margin-left: 40px;
+  text-decoration: none;
+  padding: 4px;
+}
+.r_recommend .r_game .a-active {
+  color: #ff6900;
+  font-weight: bold;
+  border: 1px solid #ff6900;
+}
+.r_recommend .r_game .crisis {
+  margin-left: 34px;
+}
+.aquarius ul {
+  overflow: hidden;
+}
+.aquarius .r_medicine {
+  margin-left: 20px;
+}
+.aquarius li {
+  width: 210px;
+  height: 330px;
+  margin-top: 38px;
+  margin-left: 14px;
+  float: left;
+  border: 1px solid rgba(76, 76, 76, 0.65);
+  position: relative;
+  background: #191D2D;
+}
+.aquarius li a {
+  text-decoration: none;
+}
+.aquarius li .r_product {
+  width: 236px;
+  height: 328px;
+  text-decoration: none;
+  text-align: center;
+  margin-left: 15px;
+}
+.aquarius li .r_product .r_picture {
+  width: 175px;
+  height: 147px;
+  margin-top: 50px;
+}
+.aquarius li p {
+  font-size: 18px;
+  color: #FF6900;
+}
+.aquarius li p span {
+  font-size: 12px;
+  color: #FF6900;
+}
+.aquarius li .title {
+  font-size: 16px;
+  width: 188px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 30px auto 10px auto;
+  color: #B9C0EF;
+}
+#box {
+  width: 1200px;
+  height: 328px;
+  overflow: hidden;
+}
+#box .swiper-slide {
+  /*border: 1px solid rebeccapurple;*/
+  width: 1200px;
+  height: 328px;
+}
+.swiper-button-white {
+  display: none;
+}
+#limi > li:hover,
+#round_box_two > li:hover,
+#round_box_one > li:hover,
+#hot > li:hover,
+#round_box_six > li:hover,
+#round_box_five > li:hover,
+#round_box_four > li:hover,
+#round_box_three > li:hover {
+  border: 2px solid #797979;
+}
+/*# sourceMappingURL=roundLess.css.map */

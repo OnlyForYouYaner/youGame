@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/register.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/js/demo.js"></script>
+    <script src="http://localhost:8081/dist/gVerify.js"></script>
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+        <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<%-include nav.html%>
+<div id="loginDiv">
+    <div class="loginSmallDiv">
+        <div class="login_acount_text">
+            <ul class="nav" id="nav">
+                <li class="cur">账号注册</li>
+                <li>手机注册</li>
+            </ul>
+            <!--</div>-->
+            <br>
+            <div class="item-box active">
+                <div class="form-input">
+                    <label class="label-elm">邮箱</label>
+                    <div class="loginInput">
+                        <input type="text" class="input-text  error" name="account[email]" id="email" placeholder="请输入邮箱" value="">
+                    </div>
+                    <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 479 &ndash;&gt;请输入一个有效的电子邮箱&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+                </div>
+                <div class="form-input">
+                    <label class="label-elm">验证码</label>
+                    <div>
+                        <input type="text" id="code_input" value="" placeholder="请输入验证码"/>
+                    </div>
+                    <div id="v_container" style="width: 120px;height: 32px; margin-left: 10px"></div>
+                </div>
+
+
+
+
+                <div class="form-input">
+                    <label class="label-elm">密码</label>
+                    <div class="loginInput" style="position: relative">
+                        <i style="position: absolute;left: 94%;color: gray;top: 8px" class="glyphicon glyphicon-eye-close look-pass" id="look-for" data-id="1"></i>
+                        <input type="password" class="input-text " name="account[password]" id="password" placeholder="请输入密码" value="">
+
+                    </div>
+                    <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 253 &ndash;&gt;8-20位的数字、字母或符号&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+                </div>
+                <div class="form-input">
+                    <label class="label-elm">确认密码</label>
+                    <div style="position: relative">
+                        <i style="position: absolute;left: 94%;color: gray;top: 8px" class="glyphicon glyphicon-eye-close look-pass2" id="look-for2" data-id="1"></i>
+                        <input type="password" class="input-text " name="password_confirmation" id="password_confirmation" placeholder="请再次填写密码" value="">
+                    </div>
+                    <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 256 &ndash;&gt;两次填写的密码不一致&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+                </div>
+
+                <div class="describe">
+                    根据文化部《网络游戏管理暂行办法》规定，本网站用户须使用有效证件进行实名注册
+
+                </div>
+
+
+                <div class="aggrement-about">
+                    <div class="input-box agree-checkbox">
+
+
+                        <div class="form-input">
+                            <label class="label-elm">真实姓名</label>
+                            <div>
+                                <input type="text" class="input-text " name="real_name" placeholder="请输入您的真实姓名" value="" id="truename">
+                            </div>
+                            <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 275 &ndash;&gt;姓名不能为空&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+
+                        </div>
+                        <div class="form-input">
+                            <label class="label-elm">身份证号</label>
+                            <div>
+                                <input type="text" class="input-text " name="credential_num" placeholder="请输入您的身份证号码" value="" id="idnum">
+                            </div>
+                            <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 282 &ndash;&gt;请输入正确的身份证号&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+                        </div>
+                    </div>
+                    <div class="SK-button-com submit-btn">
+                        <button class="orange" id="my_button">注册</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-box SK-form-body-wrapper">
+                <div class="SK-form-body">
+                    <div class="form-input">
+                        <label class="label-elm">手机号</label>
+                        <div>
+                            <input type="text" class="input-text"
+                                   name="phone_number" id="phone_number" placeholder="请输入手机号码" value="">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-input">
+                        <label class="label-elm">密码</label>
+                        <div>
+                            <input type="password" class="input-text " name="password" placeholder="请输入密码" value="" id="ph-pass">
+                        </div>
+                        <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 253 &ndash;&gt;8-20位的数字、字母或符号&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+
+                    </div>
+
+                    <div class="form-input">
+                        <label class="label-elm">确认密码</label>
+                        <div>
+                            <input type="password" class="input-text " name="password_confirmation" placeholder="请再次填写密码" value="" id="ph-pass-tr">
+                        </div>
+                        <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>两次填写的密码不一致</div>-->
+
+                    </div>
+
+                </div>
+                <div class="describe">
+                    根据文化部《网络游戏管理暂行办法》规定,本网站用户须使用有效证件进行实名注册
+                </div>
+
+                <div class="aggrement-about">
+                    <div class="input-box agree-checkbox">
+
+
+                        <div class="form-input">
+                            <label class="label-elm" >真实姓名</label>
+                            <div>
+                                <input type="text" class="input-text" name="real_name" id="real_name" placeholder="请输入您的真实姓名" value="">
+                            </div>
+                            <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 275 &ndash;&gt;姓名不能为空&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+
+                        </div>
+                        <div class="form-input">
+                            <label class="label-elm">身份证号</label>
+                            <div>
+                                <input type="text" class="input-text " name="credential_num" id="credential_num" placeholder="请输入您的身份证号码" value="">
+                            </div>
+                            <!--<div class="text-hint error-hint"><i class="fa fa-minus-circle"></i>&lt;!&ndash; react-text: 282 &ndash;&gt;请输入正确的身份证号&lt;!&ndash; /react-text &ndash;&gt;</div>-->
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="SK-button-com submit-btn">
+                    <button class="orange" id="ph-button">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<%-include bottom.html%>
+
+
+</body>
+<script>
+    var verifyCode = new GVerify("v_container");
+    $('#look-for').on('click',function () {
+        var a=$('#look-for').attr('data-id');
+        if(a==1){
+            $('.look-pass').attr('class','glyphicon glyphicon-eye-open look-pass');
+            $('#look-for').attr('data-id',2);
+            $('#password').attr('type','text');
+            var x=$.session.get('user');
+            console.log(x)
+        }else if(a==2){
+            $('.look-pass').attr('class','glyphicon glyphicon-eye-close look-pass');
+            $('#look-for').attr('data-id',1);
+            $('#password').attr('type','password');
+        }
+    });
+    $('#look-for2').on('click',function () {
+        var a=$('#look-for2').attr('data-id');
+        if(a==1){
+            $('.look-pass2').attr('class','glyphicon glyphicon-eye-open look-pass2');
+            $('#look-for2').attr('data-id',2);
+            $('#password_confirmation').attr('type','text');
+        }else if(a==2){
+            $('.look-pass2').attr('class','glyphicon glyphicon-eye-close look-pass2');
+            $('#look-for2').attr('data-id',1);
+            $('#password_confirmation').attr('type','password');
+        }
+    });
+
+    document.getElementById("my_button").onclick = function(){
+        var res = verifyCode.validate(document.getElementById("code_input").value);
+        var a=$('#email').val();
+        var b=$('#password').val();
+        var c=$('#password_confirmation').val();
+        var d=$('#truename').val();
+        var e=$('#idnum').val();
+
+        if(res && b==c){
+            $.ajax({
+                url:'/register',
+                data: {
+                    email:a,
+                    pass:b,
+                    name:d,
+                    number:e
+                },
+                success:function (res) {
+                    alert('注册成功');
+                    window.open('Signin.html','_self')
+                }
+            })
+        }else{
+            alert('注册失败')
+        }
+
+
+    };
+    $('#ph-button').on('click',function () {
+        var a=$('#phone_number').val();
+        var b=$('#ph-pass').val();
+        var c=$('#ph-pass-tr').val();
+        var d=$('#real_name').val();
+        var e=$('#credential_num').val();
+        if(b==c){
+            $.ajax({
+                url:'/registerph',
+                data: {
+                    phone:a,
+                    pass:b,
+                    name:d,
+                    number:e
+                },
+                success:function (res) {
+                    alert('注册成功');
+                    window.open('Signin.html','_self')
+                }
+            })
+        }else{
+            alert('注册失败')
+        }
+    })
+</script>
+</html>

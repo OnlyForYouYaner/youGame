@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+
+    <link rel="stylesheet" href="http://localhost:8081/font/font-awesome-4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="http://localhost:8081/dist/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8081/font/font_bottom/iconfont.css">
+    <link rel="stylesheet" href="http://localhost:8081/dist/swiper.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/community.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indextop.css">
+    <link rel="stylesheet" href="http://localhost:8081/css/indexbottom.css">
+    <script src="http://localhost:8081/dist/jquery-3.3.1.js"></script>
+    <script src="http://localhost:8081/dist/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="../dist/swiper.js"></script>
+</head>
+<body>
+
+<div id="c-all">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="box">
+            <%-include nav.html%>
+        </div>
+    </div>
+    <div class="clearfix row" id="row1">
+        <div class="col-xs-1 col-sm-1 col-md-1"></div>
+        <div class="col-xs-10 col-sm-10 col-md-10">
+
+            <div class="col-xs-8 col-sm-8 col-md-8" id="box1">
+                <div id="posts">
+                    <div class="swiper-container" id="RotationChart">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="http://localhost:8081/images/2.jpg"/></div>
+                            <div class="swiper-slide"><img src="http://localhost:8081/images/3.jpg"/></div>
+                            <div class="swiper-slide"><img src="http://localhost:8081/images/4.jpg"/></div>
+
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white left"></div>
+                        <div class="swiper-button-next swiper-button-white right"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+
+                        <li role="presentation" class="active"><a href="#latest" aria-controls="latest" role="tab" data-toggle="tab">最新帖子</a></li>
+                        <li role="presentation"><a href="#release" aria-controls="release" role="tab" data-toggle="tab">推荐U贴</a></li>
+                        <button type="button" class="btn btn-info" id="btn">发布U贴</button>
+
+                    </ul>
+
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="latest">
+                            <div id="pl">
+                                <table class="table tab_post" id="tab_post">
+                                    <tbody class="tab-body_left">
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="release">
+                            <div id="hot">
+                                <table class="table tab_posts">
+                                    <tbody class="tab-body_right">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4" id="box2">
+                <div class="right-top">
+                    <!--<a href="../html/PersonalCenter.html"><img src="../images/头像.png" height="100" width="100"/></a>-->
+                    <!--<div id="right-top2">-->
+                    <!--<p id="name">雪儿</p>-->
+                    <!--<p>个性签名</p>-->
+                    <!--<span>游戏数：</span><span>0</span>-->
+                    <!--</div>-->
+                </div>
+                <div class="right-bottom">
+                    <div class="SK-recommend-container SK-hot-group-container">
+                        <div class="title">
+                            <a href="./allTeam.html" id="group">全部小组</a>
+                            <p>官方小组</p>
+                        </div>
+                        <div class="content1">
+                            <a href="javascript:;" id="group-first">
+                                <img src="../images/1-1.png" height="60" width="100"/>
+                                <div class="content_right">
+                                    <h1>YouGame综合讨论组</h1>
+                                    <h2>
+                                        <i class="fa fa-user"></i>5
+                                        <i class="fa fa-file-text"></i>10
+                                    </h2>
+                                    <p>最新讨论: 2018-12-02 19:31:59</p>
+                                </div>
+                            </a>
+                            <a href="javascript:;" id="group-second">
+                                <img src="../images/1-2.jpg" height="60" width="100"/>
+                                <div class="content_right">
+                                    <h1>辐射76</h1>
+                                    <h2>
+                                        <i class="fa fa-user"></i>1
+                                        <i class="fa fa-file-text"></i>3
+                                    </h2>
+                                    <p>最新讨论: 2018-12-02 18:12:02</p>
+                                </div>
+                            </a>
+                            <a href="javascript:;" id="group-third">
+                                <img src="../images/1-3.jpg" height="60" width="100"/>
+                                <div class="content_right">
+                                    <h1>疑问集中组</h1>
+                                    <h2>
+                                        <i class="fa fa-user"></i>2
+                                        <i class="fa fa-file-text"></i>2
+                                    </h2>
+                                    <p>最新讨论: 2018-11-30 20:07:16</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1" ></div>
+
+    </div >
+</div>
+
+<%-include bottom.html%>
+
+</body>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000,//可选选项，自动滑动
+        autoplayDisableOnInteraction : false,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop:true
+    });
+</script>
+<script>
+    //右边三个小组
+    $('.content1').on('click','a' ,function () {
+        var id=2;
+        window.open('officialDetails.html?id='+id+'','_self');
+    });
+
+    $('.content1').on('click','a' ,function () {
+        var id=3;
+        window.open('officialDetails.html?id='+id+'','_self');
+    });
+
+    $('.content1').on('click','a' ,function () {
+        var id=4;
+        window.open('officialDetails.html?id='+id+'','_self');
+    });
+
+    var str=window.location.search.substr(1).split('=');
+    // console.log(str[1]);
+    if(str[1]==undefined){
+        str[1]=2
+    }
+
+    $('#btn').click(function () {
+        window.open('releasePost.html?id='+str[1]+'','_self');
+    })
+    //右边个人
+
+    function group_right() {
+        $.ajax({
+            url:'/useright',
+            data:{userid:1},
+            success:function (res) {
+                console.log(res);
+                $('.right-top ').append(`
+                <div>
+                    <a href="javascript:;"><img src="${res[0].u_photo}" height="100" width="100" style="border-radius: 200px;"/></a>
+                    <div id="right-top2">
+                    <p id="name" data-id="${res[0].u_id}">${res[0].u_nickName}</p>
+                        <p>个性签名：</p>
+                    <p>${res[0].u_atuograph}</p>
+                    <span>游戏数：</span><span>${res[0].gamesnum}</span>
+                </div>
+                    `);
+                $('.right-top').on('click','#name' ,function () {
+                    var a_id=1;
+                    window.open('personal.html?id='+a_id+'','_self');
+                });
+                $('.right-top').on('click','a' ,function () {
+                    var a_id=1;
+                    window.open('personal.html?id='+a_id+'','_self');
+                });
+            }
+
+        });
+    }
+    group_right();
+
+    //最新帖子
+    function postfind() {
+        $.ajax({
+            url:'/postfind',
+            success:function (res) {
+                // console.log(res);
+                for(var i=0;i<res.length;i++){
+                    $('.tab-body_left').append(`   <tr>
+                                        <td></td>
+                                        <td colspan="10">
+                                            <p class="bt" data-id="${res[i].p_id}">${res[i].p_text}</p>
+                                            <div class="content">
+                                                 ${res[i].p_message}
+                                            </div>
+                                            <div class="content_bottom">
+                                                <img src="${res[i].u_photo}" class="tx" data-id="${res[i].u_id}" style="border-radius: 200px;"/>
+                                                <span> ${res[i].p_date}</span>
+                                                <div class="dz">
+                                                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>&nbsp;&nbsp;回复&nbsp;&nbsp;0
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>`)
+                }
+                $('.tab-body_left').on('click','.bt' ,function () {
+                    var id=$(this).attr('data-id');
+                    window.open('Utie.html?id='+id+'','_self');
+                });
+                $('.tab-body_left').on('click','.tx' ,function () {
+                    var u_id=$(this).attr('data-id');
+                    window.open('personal.html?id='+u_id+'','_self');
+                })
+            }
+        })
+    }
+    postfind();
+
+    //最热帖子
+    function postfind2() {
+        $.ajax({
+            url:'/postfind2',
+            success:function (res) {
+                // console.log(res);
+                for(var i=0;i<res.length;i++){
+                    $('.tab-body_right').append(`   <tr>
+                                        <td></td>
+                                        <td colspan="10">
+                                            <p class="bt"  data-id="${res[i].p_id}">${res[i].p_text}</p>
+                                            <div class="content">
+                                                 ${res[i].p_message}
+                                            </div>
+                                            <div class="content_bottom">
+                                                <img src="${res[i].u_photo}" class="tx"  data-id="${res[i].u_id}" style="border-radius: 200px;"/>
+                                                <span> ${res[i].p_date}</span>
+                                                <div class="dz">
+                                                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>&nbsp;&nbsp;回复&nbsp;&nbsp;0
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>`)
+                }
+                $('.tab-body_right').on('click','.bt' ,function () {
+                    var a_id=$(this).attr('data-id');
+                    window.open('Utie.html?id='+a_id+'','_self');
+                });
+                $('.tab-body_right').on('click','.tx' ,function () {
+                    var u_id=$(this).attr('data-id');
+                    window.open('personal.html?id='+u_id+'','_self');
+                })
+            }
+        })
+    }
+    postfind2();
+</script>
+
+</html>

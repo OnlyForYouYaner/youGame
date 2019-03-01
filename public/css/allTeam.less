@@ -1,0 +1,187 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@color:#B9C0EF;
+@color2:#7A80A2;
+@background:#202539;
+@background-color:#31374e;
+#bigbox{
+  background: @background;
+  width: 100%;
+}
+body{
+  background: @background;
+  width: 100%;
+}
+.allTeam-box{
+  background: @background;
+  width: 1200px;
+  height:800px;
+  margin: 0 auto;
+  padding: 150px 0 40px;
+}
+.left-box {
+  float: left;
+  width: 260px;
+  height: auto;
+  overflow: hidden;
+  .allTeam-search {
+    background: #292E41;
+    width: 260px;
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #4C516A;
+    padding-left: 20px;
+    overflow: hidden;
+    border-radius: 5px 5px 5px 5px;
+      input {
+        color: @color;
+        outline: none;
+        font-size: 14px;
+        width: 182px;
+        line-height: 48px;
+        height: 48px;
+        border: none;
+        background: transparent;
+      }
+      .fa-search {
+        float: right;
+        width: 56px;
+        height: 48px;
+        line-height: 48px;
+        font-size: 24px;
+        cursor: pointer;
+        color: @color2;
+        text-align: center;
+      }
+  }
+  .left-list{
+    width: 260px;
+    background: #33394d;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+    .list{
+      height: 50px;
+      line-height: 50px;
+      padding-left: 15px;
+      border-bottom: 1px solid #202539;
+      color: @color2;
+    }
+  .active{
+    color: @color;
+  }
+    .list:hover{
+      color: @color;
+    }
+}
+.right-box{
+  margin-left: 280px;
+  .right-title{
+    width: 920px;
+    height: 70px;
+    .right-top1{
+      font-size: 19px;
+      color: @color;
+      margin-bottom: 5px;
+    }
+    p{
+      font-size: 12px;
+      color: @color2;
+    }
+  }
+  .right-bottom{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 450px;
+    height: 80px;
+    float: left;
+    background:#33394D;
+  }
+  img{
+    margin-right: 10px;
+    width: 135px;
+    height: 80px;
+    float: left;
+  }
+  a{
+    padding-top: 10px;
+    float: left;
+    .h1title{
+      font-style: normal;
+      font-size: 14px;
+      width: 150px;
+      font-weight: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-bottom: 15px;
+      color: @color;
+      margin-top: 5px;
+
+    }
+    p{
+      height: 20px;
+      color: @color2;
+      font-size: 12px;
+    }
+    i{
+      margin-right: 5px;
+    }
+    i:nth-of-type(2){
+      margin-left: 15px;
+    }
+  }
+  a:hover{
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-team{
+    float: right;
+    border: none;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+    background: #ff6900;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    border-radius: 2px 2px 2px 2px;
+    margin: 28px 10px 0 0;
+    padding: 0;
+    width: 68px;
+    height: 24px;
+    line-height: 24px;
+  }
+  .btn-team1{
+    float: right;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 2px 2px 2px 2px;
+    margin: 28px 10px 0 0;
+    padding: 0;
+    width: 68px;
+    height: 24px;
+    background: transparent;
+    border: 1px solid #4C516A;
+    color: #7A80A2;
+    line-height: 24px;
+  }
+}
+.no-search-result{
+  height: 101px;
+  width: 920px;
+  line-height: 101px;
+  font-size: 14px;
+  color: #7A80A2;
+  background: #33394D;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+}
+
